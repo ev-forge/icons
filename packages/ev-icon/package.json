@@ -1,0 +1,25 @@
+{
+  "name": "ev-icon",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "web components",
+    "custom elements",
+    "agnostic",
+    "accessible"
+  ],
+  "author": {
+    "name": "Jimy Nicanor - elVengador",
+    "url": "https://github.com/elVengador"
+  },
+  "license": "MIT",
+  "description": "A lightweight, accessible, and framework-agnostic library of web component icons."
+}
