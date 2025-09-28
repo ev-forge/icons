@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Monorepo for the ev-icons-library project, a powerful, extendable icon library with originally",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm --filter ./apps/docs dev",
+    "dev:lib": "pnpm --filter ./packages/ev-icon dev",
+    "build:lib": "pnpm --filter ./packages/ev-icon build",
+    "build": "pnpm build:lib && pnpm --filter ./apps/docs build",
+    "lint": "pnpm -r lint"
   },
   "packageManager": "pnpm@9.1.0",
   "keywords": [],
@@ -12,5 +16,11 @@
     "email": "dev.jimynicanor@gmail.com",
     "url": "https://github.com/elVengador"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vite-plugin-dts": "^4.5.4"
+  }
 }
