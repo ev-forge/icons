@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
+    "noEmit": true,
     "moduleResolution": "bundler",
     "strict": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
@@ -9,5 +10,5 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
-  "include": ["src", "../../regenerate.js"]
+  "exclude": ["dist", "node_modules"]
 }
