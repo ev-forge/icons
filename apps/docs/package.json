@@ -10,14 +10,11 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
-    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
     "astro": "^5.14.1",
     "ev-icon": "workspace:*",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.13"
-  },
-  "devDependencies": {
-    "@types/react": "^19.1.14"
+    "react-dom": "^19.1.1"
   }
 }
