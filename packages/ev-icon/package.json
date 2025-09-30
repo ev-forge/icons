@@ -1,5 +1,5 @@
 {
-  "name": "@elvengador/ev-icon",
+  "name": "@elvengador/ev-icon-library",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/ev-icon.cjs.js",
