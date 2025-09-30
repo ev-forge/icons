@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Monorepo for the ev-icons-library project, a powerful, extendable icon library with originally",
   "scripts": {
-    "dev": "pnpm --filter ./apps/docs dev",
+    "dev:doc": "pnpm --filter ./apps/docs dev",
     "dev:lib": "pnpm --filter ./packages/ev-icon dev",
+    "build:doc": "pnpm --filter ./apps/docs build",
     "build:lib": "pnpm --filter ./packages/ev-icon build",
-    "build": "pnpm build:lib && pnpm --filter ./apps/docs build",
+    "build": "pnpm build:lib && pnpm build:doc",
     "lint": "pnpm -r lint"
   },
   "packageManager": "pnpm@9.1.0",

@@ -1,5 +1,5 @@
 {
-  "name": "ev-icon",
+  "name": "@elvengador/ev-icon",
   "version": "0.0.1",
   "type": "module",
   "main": "./dist/ev-icon.cjs.js",
@@ -28,5 +28,8 @@
     "url": "https://github.com/elVengador"
   },
   "license": "MIT",
-  "description": "A lightweight, accessible, and framework-agnostic library of web component icons."
+  "description": "A lightweight, accessible, and framework-agnostic library of web component icons.",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }
