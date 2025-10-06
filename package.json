@@ -13,7 +13,11 @@
     "build:doc": "pnpm --filter ./apps/docs build",
     "build:lib": "pnpm --filter ./packages/ev-icon build",
     "build": "pnpm build:lib && pnpm build:doc",
-    "lint": "pnpm -r lint"
+    "lint": "pnpm -r lint",
+    "release:patch": "pnpm --filter @ev-forge/icon-library exec pnpm version patch && git push --follow-tags",
+    "release:minor": "pnpm --filter @ev-forge/icon-library exec pnpm version minor && git push --follow-tags",
+    "release:major": "pnpm --filter @ev-forge/icon-library exec pnpm version major && git push --follow-tags",
+    "release:publish": "pnpm --filter @ev-forge/icon-library publish"
   },
   "packageManager": "pnpm@9.1.0",
   "keywords": [],
