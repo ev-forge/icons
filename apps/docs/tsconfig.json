@@ -3,7 +3,7 @@
   "include": [
     ".astro/types.d.ts",
     "**/*",
-    "node_modules/ev-icon/dist/global.d.ts"
+    "node_modules/@ev-forge/icon-library/dist/global.d.ts"
   ],
   "exclude": ["dist"],
   "compilerOptions": {

@@ -1,6 +1,5 @@
 {
   "name": "benchmark-vite-react",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ev-forge/icon-library": "workspace:*",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.0",
     "@tailwindcss/vite": "^4.1.14",
-    "ev-icon": "workspace:*",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3",

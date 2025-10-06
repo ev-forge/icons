@@ -8,7 +8,7 @@ import {
   svgHomeSolid,
   svgNodeBrands,
   svgZSolid,
-} from "ev-icon";
+} from "@ev-forge/icon-library";
 
 // const icons = Object.entries(evIconLibrary);
 

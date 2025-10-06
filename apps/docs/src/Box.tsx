@@ -1,4 +1,4 @@
-import { svgGitBrands } from "ev-icon";
+import { svgGitBrands } from "@ev-forge/icon-library";
 
 export const Box = () => {
   return (

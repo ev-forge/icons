@@ -1,7 +1,12 @@
 {
-  "name": "ev-icons-library",
-  "version": "1.0.0",
-  "description": "Monorepo for the ev-icons-library project, a powerful, extendable icon library with originally",
+  "name": "root",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ev-forge/icon-library.git"
+  },
   "scripts": {
     "dev:doc": "pnpm --filter ./apps/docs dev",
     "dev:lib": "pnpm --filter ./packages/ev-icon dev",
@@ -12,11 +17,6 @@
   },
   "packageManager": "pnpm@9.1.0",
   "keywords": [],
-  "author": {
-    "name": "Jimy Nicanor - elVengador",
-    "email": "dev.jimynicanor@gmail.com",
-    "url": "https://github.com/elVengador"
-  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.5.2",

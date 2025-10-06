@@ -31,7 +31,7 @@ import {
   svgWSolid,
   svgXingSquareBrands,
   svgZapSolid,
-} from "ev-icon";
+} from "@ev-forge/icon-library";
 import Wrapper from "../Wrapper";
 
 const TEST_CASE = [
