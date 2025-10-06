@@ -38,14 +38,14 @@ npm i @ev-forge/icon-library
 
 ```tsx
 // 1. import icons
-import { homeIcon, cogIcon } from "@ev-forge/icon-library";
+import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
 
 // 2. use them in ev-icon
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={homeIcon} class="w-6 h-6 text-blue-500" />
-      <ev-icon svg={cogIcon} />
+      <ev-icon svg={svgHomeSolid} class="w-6 h-6 text-blue-500" />
+      <ev-icon svg={svgRadioSolid} />
     </div>
   );
 }
@@ -63,7 +63,7 @@ Apply size and color classes directly to the component.
 
 ```html
 <!-- A 24px (w-6) red icon -->
-<ev-icon svg="{heartIcon}" class="w-6 h-6 text-red-500" />
+<ev-icon svg="{svgRadioSolid}" class="w-6 h-6 text-red-500" />
 ```
 
 ### Using a Global Stylesheet
