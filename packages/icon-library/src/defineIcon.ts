@@ -11,6 +11,7 @@ export const defineMyIcon = () => {
         justify-content: center;
         width: 1em;
         height: 1em;
+        vertical-align: middle;
         color: inherit;
     }
     svg {
