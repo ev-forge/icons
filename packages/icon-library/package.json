@@ -35,6 +35,7 @@
     "dev": "vite build --watch",
     "build": "vite build",
     "prepublishOnly": "pnpm build",
+    "sync": "node ./syncIcons",
     "clean": "rm -rf dist"
   },
   "publishConfig": {
