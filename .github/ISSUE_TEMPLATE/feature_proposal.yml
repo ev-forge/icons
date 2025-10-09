@@ -1,0 +1,44 @@
+name: ✨ Feature Proposal (RFC)
+description: Propose a new feature or enhancement for discussion.
+title: "[PROPOSAL] "
+labels: ["enhancement", "discussion"]
+body:
+  - type: checkboxes
+    id: pre-flight-checklist
+    attributes:
+      label: ✅ Pre-flight Checklist
+      description: Please confirm the following.
+      options:
+        - label: I have searched the existing issues and believe this is a new proposal.
+          required: true
+
+  - type: textarea
+    id: problem-use-case
+    attributes:
+      label: "1. What is the problem or use case?"
+      description: "A clear description of the problem this feature solves."
+      placeholder: "e.g., The current method for sizing icons is too verbose."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: "2. Describe the solution you'd like"
+      description: "A clear description of how the feature would work from a user's perspective."
+      placeholder: "e.g., I propose a new `size` prop that accepts 'sm', 'md', 'lg'."
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: "3. What is the value of this proposal?"
+      description: "Why is this important? Who does it benefit?"
+      placeholder: "e.g., This would simplify the API and make the library easier to use for new developers."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---<br>_This is a Request for Comment (RFC) to discuss the viability and design of a proposal before implementation._"
