@@ -43,7 +43,7 @@ import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 h-6 text-blue-500" />
+      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
       <ev-icon svg={svgRadioSolid} />
     </div>
   );
@@ -61,14 +61,14 @@ This monorepo contains the following packages, managed with `pnpm` workspaces:
 | Package                                                           | Description                                       |
 | :---------------------------------------------------------------- | :------------------------------------------------ |
 | 📦 **[`packages/icon-library`](./packages/icon-library)**         | The core icon library, published to npm.          |
-| 🌐 **[`apps/docs`](./apps/docs)**                                 | The official landing page and documentation site. |
+| 🌐 **[`apps/docs`](./apps/docs)**                                 | The official landing page and browser icons site. |
 | 📊 **[`apps/benchmark-vite-react`](./apps/benchmark-vite-react)** | The performance benchmark app for Vite + React.   |
 
 To get started with local development, clone the repository and run `pnpm install`.
 
-<!-- ## 🤝 Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please read our [**Contributing Guide**](./CONTRIBUTING.md) to get started. -->
+Contributions are welcome! Please read our [**Contributing Guide**](./CONTRIBUTING.md) to get started.
 
 ## 🗺️ Roadmap
 
@@ -80,6 +80,6 @@ We have a clear vision for `@ev-forge/icon-library`. Our future plans include:
 
 ## 📄 License
 
-The source code for this project is released under the **[MIT License](./LICENSE)**.
+The source code for this project is released under the **[MIT License](./LICENSE.md)**.
 
 The base icons are provided by **Font Awesome Free** and are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

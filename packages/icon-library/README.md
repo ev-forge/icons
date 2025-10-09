@@ -63,7 +63,7 @@ Apply size and color classes directly to the component.
 
 ```html
 <!-- A 24px (w-6) red icon -->
-<ev-icon svg="{svgRadioSolid}" class="w-6 h-6 text-red-500" />
+<ev-icon svg="{svgRadioSolid}" class="w-6 text-red-500" />
 ```
 
 ### Using a Global Stylesheet
