@@ -1,0 +1,60 @@
+name: 🐞 Bug Report
+description: Report something that isn't working as expected.
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: checkboxes
+    id: pre-flight-checklist
+    attributes:
+      label: ✅ Pre-flight Checklist
+      description: Please confirm you've done the following before submitting your bug report.
+      options:
+        - label: I have searched the existing issues and believe this is a new bug.
+          required: true
+        - label: I have read the documentation and confirmed my issue is not a misunderstanding of the API.
+          required: true
+
+  - type: markdown
+    attributes:
+      value: "---"
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: "1. What is the bug?"
+      description: A clear and concise description of the problem.
+      placeholder: "When I click the save button, the application crashes."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: "2. How to reproduce it?"
+      description: "Please provide a minimal, reproducible set of steps."
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: "3. What did you expect to happen?"
+      description: A clear description of the correct behavior.
+      placeholder: "The data should be saved and I should see a success message."
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: "(Optional) Screenshots or Environment Details:"
+      description: "Provide any screenshots or details about your environment that might help."
+      value: |
+        - OS:
+        - Browser:
+        - `ev-icon-library` Version:
