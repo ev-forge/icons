@@ -1,6 +1,6 @@
 {
   "name": "@ev-forge/icon-library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.",
   "type": "module",
   "author": "elVengador forge",
