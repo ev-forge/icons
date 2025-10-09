@@ -15,9 +15,9 @@
     "build:lib": "pnpm --filter ./packages/icon-library build",
     "build": "pnpm build:lib && pnpm build:doc",
     "lint": "pnpm -r lint",
-    "release:patch": "pnpm --filter @ev-forge/icon exec pnpm version patch && git push && git push --tags",
-    "release:minor": "pnpm --filter @ev-forge/icon exec pnpm version minor && git push && git push --tags",
-    "release:major": "pnpm --filter @ev-forge/icon exec pnpm version major && git push && git push --tags",
+    "release:patch": "pnpm --filter @ev-forge/icon-library exec pnpm version patch && git push && git push --tags",
+    "release:minor": "pnpm --filter @ev-forge/icon-library exec pnpm version minor && git push && git push --tags",
+    "release:major": "pnpm --filter @ev-forge/icon-library exec pnpm version major && git push && git push --tags",
     "release:publish": "pnpm --filter @ev-forge/icon-library publish"
   },
   "packageManager": "pnpm@9.1.0",
