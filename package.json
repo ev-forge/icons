@@ -9,9 +9,10 @@
   },
   "scripts": {
     "dev:doc": "pnpm --filter ./apps/docs dev",
-    "dev:lib": "pnpm --filter ./packages/ev-icon dev",
+    "dev:lib": "pnpm --filter ./packages/icon-library dev",
+    "sync": "pnpm --filter ./packages/icon-library sync",
     "build:doc": "pnpm --filter ./apps/docs build",
-    "build:lib": "pnpm --filter ./packages/ev-icon build",
+    "build:lib": "pnpm --filter ./packages/icon-library build",
     "build": "pnpm build:lib && pnpm build:doc",
     "lint": "pnpm -r lint",
     "release:patch": "pnpm --filter @gg-forge/icon exec pnpm version patch && git push && git push --tags",
