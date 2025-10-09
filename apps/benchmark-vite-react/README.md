@@ -4,7 +4,7 @@ This app benchmarks the performance of `@ev-forge/icon-library` against `@fortaw
 
 It measures **Final Bundle Impact** (tree-shaking) and **Client Load Performance** (Lighthouse metrics) when rendering a set of 32 unique icons.
 
-➡️ **Return to the main repository:** [github.com/es-forge/icon-library](https://github.com/es-forge/icon-library)
+➡️ **Return to the main repository:** [github.com/es-forge/icon-library](https://github.com/ev-forge/icon-library)
 
 ---
 
