@@ -1,0 +1,24 @@
+---
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script>
+      import "@ev-forge/icon-library"; // 👈 register the web component before to use it
+    </script>
+  </head>
+  <body class="bg-ev-light text-ev-dark">
+    <slot />
+  </body>
+
+  <Footer />
+</html>

@@ -21,5 +21,5 @@ export const LINKS = {
     "ev-icon-library-license": "",
     "ev": "https://github.com/elVengador",
     "fa": "https://fontawesome.com",
-    "browser-icons": "/"
+    "browser-icons": "/browser"
 }

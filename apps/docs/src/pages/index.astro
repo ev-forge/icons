@@ -7,195 +7,144 @@ import {
   svgSearchSolid,
   svgStarSolid,
 } from "@ev-forge/icon-library";
-import "../styles/global.css";
+
 import {
   ADD_TYPES_EXAMPLE,
   LINKS,
   IMPORT_AND_USE_IT_EXAMPLE,
   INSTALL_EXAMPLE,
 } from "../constants";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <script>
-      import "@ev-forge/icon-library"; // 👈 register the web component before to use it
-    </script>
-  </head>
-  <body class="bg-ev-light text-ev-dark">
-    <main class="flex flex-col items-center gap-10">
-      <section
-        class="w-full max-w-[800px] min-h-[100dvh] p-4 flex flex-col justify-center gap-4 md:gap-10"
-      >
-        <h1 class="text-4xl md:text-6xl">
-          One Icon Library for Every Framework, Bundling Only What You Use
-        </h1>
-        <p class="text:lg md:text-2xl">
-          <span class="font-bold">ev-icon-library</span> is a framework-agnostic
-          JS tool that delivers Font Awesome's high-quality icons, powered by icon-level
-          tree-shaking for the smallest possible bundle size. If this helps you,
-          please gift us a <a
-            href={LINKS["ev-icon-library"]}
-            class="border-b border-dashed border-ev-dark"
-            >star on GitHub! <ev-icon svg={svgStarSolid} class="text-yellow-500"
-            ></ev-icon></a
+<Layout>
+  <main class="flex flex-col items-center gap-10">
+    <section
+      class="w-full max-w-[800px] min-h-[100dvh] p-4 flex flex-col justify-center gap-4 md:gap-10"
+    >
+      <h1 class="text-4xl md:text-6xl">
+        One Icon Library for Every Framework, Bundling Only What You Use
+      </h1>
+      <p class="text:lg md:text-2xl">
+        <span class="font-bold">ev-icon-library</span> is a framework-agnostic JS
+        tool that delivers Font Awesome's high-quality icons, powered by icon-level
+        tree-shaking for the smallest possible bundle size. If this helps you, please
+        gift us a <a
+          href={LINKS["ev-icon-library"]}
+          class="border-b border-dashed border-ev-dark"
+          >star on GitHub! <ev-icon svg={svgStarSolid} class="text-yellow-500"
+          ></ev-icon></a
+        >
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
+            <h3 class="font-semibold">
+              <ev-icon svg={svgBoxArchiveSolid}></ev-icon> Tiny Bundle
+            </h3>
+            <p>Only the icons you import are included in your build.</p>
+          </div>
+
+          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
+            <h3 class="font-semibold">
+              <ev-icon svg={svgPuzzlePieceSolid}></ev-icon> For Any JSX
+            </h3>
+            <p>Use it in React, Svelte, Vue, or any JSX-based environment.</p>
+          </div>
+
+          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
+            <h3 class="font-semibold">
+              <ev-icon svg={svgPaletteSolid}></ev-icon> Simple Styling
+            </h3>
+            <p>Style icons with your favorite utility classes</p>
+          </div>
+        </div>
+        <div class="flex justify-center items-center gap-4">
+          <a
+            href="#get-started"
+            class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
+            >Get Started <ev-icon svg={svgRocketSolid}></ev-icon></a
           >
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-              <h3 class="font-semibold">
-                <ev-icon svg={svgBoxArchiveSolid}></ev-icon> Tiny Bundle
-              </h3>
-              <p>Only the icons you import are included in your build.</p>
-            </div>
-
-            <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-              <h3 class="font-semibold">
-                <ev-icon svg={svgPuzzlePieceSolid}></ev-icon> For Any JSX
-              </h3>
-              <p>Use it in React, Svelte, Vue, or any JSX-based environment.</p>
-            </div>
-
-            <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-              <h3 class="font-semibold">
-                <ev-icon svg={svgPaletteSolid}></ev-icon> Simple Styling
-              </h3>
-              <p>Style icons with your favorite utility classes</p>
-            </div>
-          </div>
-          <div class="flex justify-center items-center gap-4">
-            <a
-              href="#get-started"
-              class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
-              >Get Started <ev-icon svg={svgRocketSolid}></ev-icon></a
-            >
-            <a
-              href={LINKS["browser-icons"]}
-              class="p-2 flex items-center gap-2 border-2 border-ev-secondary rounded-md"
-              >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
-            >
-          </div>
-        </p>
-      </section>
-
-      <section
-        class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-      >
-        <h2 class="text-2xl md:text-4xl">
-          Performance Meets Design Consistency
-        </h2>
-        <p>
-          The modern web presents a frustrating choice for icons. Many libraries
-          bundle their entire set, bloating your app when you only need a few.
-          Others are small but have a limited selection, while massive
-          collections often lack design consistency. <span class="font-bold"
-            >ev-icon-library</span
-          > is designed to solve all three issues.
-        </p>
-        <p>
-          Our philosophy is to reverse this trend by focusing on three core
-          principles:
-          <ul class="list-inside list-decimal">
-            <li>
-              <span class="font-bold">Start with Excellence</span> We chose Font
-              Awesome as our foundation for one simple reason: its icons are a masterpiece
-              of design consistency. By starting here, we guarantee a professional
-              and cohesive look for your projects out of the box.
-            </li>
-            <li>
-              <span class="font-bold">Performance is Paramount</span> We believe
-              the best code is the code you don't ship. Our icon-level tree-shaking
-              ensures your application only bundles the icons you use, keeping it
-              as small and fast as possible.
-            </li>
-            <li>
-              <span class="font-bold"
-                >Embrace the Platform, Empower the Community</span
-              > By building on native Web Components, ev-icon-library works in any
-              framework. We extend this foundation by allowing the community to contribute
-              in a thoughtfully curated way, ensuring the icon set remains consistent
-              and valuable for everyone.
-            </li>
-          </ul>
-        </p>
-      </section>
-
-      <section
-        id="get-started"
-        class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-      >
-        <h2 class="text-2xl md:text-4xl">Get Started</h2>
-        <div>
-          <h3 class="text-xl">Step 1: Install</h3>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h3 class="text-xl">
-            Step 2: add the web component types into your tsconfig.ts
-          </h3>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h3 class="text-xl">Step 3: Import and use it</h3>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-
-        <div class="flex flex-col items-center gap-4">
-          <p class="font-semibold text-center text-2xl">
-            Done! That's all it takes. For a full list of available icons, head
-            over to our Icon Browser.
-          </p>
           <a
             href={LINKS["browser-icons"]}
-            class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md"
+            class="p-2 flex items-center gap-2 border-2 border-ev-secondary rounded-md"
             >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
           >
         </div>
-      </section>
+      </p>
+    </section>
 
-      <footer
-        class="w-full p-2 flex flex-col items-center gap-2 bg-ev-dark-hard text-white"
-      >
-        <div class="text-center">
-          Forged by <a
-            href={LINKS["ev-forge"]}
-            class="text-ev-light-hard"
-            target="_blank"
-            rel="noopener noreferrer">ev-forge</a
-          > with ❤️ from Perú 🇵🇪
-        </div>
+    <section
+      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
+    >
+      <h2 class="text-2xl md:text-4xl">Performance Meets Design Consistency</h2>
+      <p>
+        The modern web presents a frustrating choice for icons. Many libraries
+        bundle their entire set, bloating your app when you only need a few.
+        Others are small but have a limited selection, while massive collections
+        often lack design consistency. <span class="font-bold"
+          >ev-icon-library</span
+        > is designed to solve all three issues.
+      </p>
+      <p>
+        Our philosophy is to reverse this trend by focusing on three core
+        principles:
+        <ul class="list-inside list-decimal">
+          <li>
+            <span class="font-bold">Start with Excellence</span> We chose Font Awesome
+            as our foundation for one simple reason: its icons are a masterpiece
+            of design consistency. By starting here, we guarantee a professional
+            and cohesive look for your projects out of the box.
+          </li>
+          <li>
+            <span class="font-bold">Performance is Paramount</span> We believe the
+            best code is the code you don't ship. Our icon-level tree-shaking ensures
+            your application only bundles the icons you use, keeping it as small
+            and fast as possible.
+          </li>
+          <li>
+            <span class="font-bold"
+              >Embrace the Platform, Empower the Community</span
+            > By building on native Web Components, ev-icon-library works in any
+            framework. We extend this foundation by allowing the community to contribute
+            in a thoughtfully curated way, ensuring the icon set remains consistent
+            and valuable for everyone.
+          </li>
+        </ul>
+      </p>
+    </section>
 
-        <div class="text-center">
-          Released under the <a
-            href={LINKS["ev-icon-library-license"]}
-            class="text-ev-light-hard"
-            target="_blank"
-            rel="noopener noreferrer">MIT License</a
-          >.<br />
-          Copyright © 2025-present <a
-            href={LINKS["ev"]}
-            class="text-ev-light-hard"
-            target="_blank"
-            rel="noopener noreferrer">elVengador</a
-          >
-          & GG Forge Contributors.
-        </div>
+    <section
+      id="get-started"
+      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
+    >
+      <h2 class="text-2xl md:text-4xl">Get Started</h2>
+      <div>
+        <h3 class="text-xl">Step 1: Install</h3>
+        <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
+      </div>
 
-        <div class="text-center">
-          Base icons by <a
-            href={LINKS["fa"]}
-            class="text-ev-light-hard"
-            target="_blank"
-            rel="noopener noreferrer">Font Awesome</a
-          > (CC BY 4.0).
-        </div>
-      </footer>
-    </main>
-  </body>
-</html>
+      <div>
+        <h3 class="text-xl">
+          Step 2: add the web component types into your tsconfig.ts
+        </h3>
+        <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
+      </div>
+
+      <div>
+        <h3 class="text-xl">Step 3: Import and use it</h3>
+        <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
+      </div>
+
+      <div class="flex flex-col items-center gap-4">
+        <p class="font-semibold text-center text-2xl">
+          Done! That's all it takes. For a full list of available icons, head
+          over to our Icon Browser.
+        </p>
+        <a
+          href={LINKS["browser-icons"]}
+          class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md"
+          >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
+        >
+      </div>
+    </section>
+  </main>
+</Layout>
