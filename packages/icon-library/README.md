@@ -20,13 +20,15 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 
 ## 🏁 Get Started
 
-### 1. Installation
+### In Vite/React
+
+1. Installation
 
 ```bash
 npm i @ev-forge/icon-library
 ```
 
-### 2. Add types for web component into tsconfig.json
+2. Add types for web component into tsconfig.json
 
 ```json
 {
@@ -34,7 +36,50 @@ npm i @ev-forge/icon-library
 }
 ```
 
-### 3. Import and Use
+3. Import and Use
+
+```tsx
+import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
+
+function MyApp() {
+  return (
+    <div>
+      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
+    </div>
+  );
+}
+```
+
+### In NextJs
+
+```bash
+npm i @ev-forge/icon-library
+```
+
+2. Add types for web component, create a file `ev-icon-library.d.ts` and copy inside
+
+```ts
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" />
+```
+
+3. (Optional) For Next.js with Server-Side Rendering (SSR):
+   To ensure icons render correctly, you must register the component library on the client-side. Create the file `IconLibraryRegistry.tsx` and paste the following code:
+
+```jsx
+"use client";
+
+import { useEffect } from "react";
+
+export const IconLibraryRegistry = () => {
+  useEffect(() => {
+    import("@ev-forge/icon-library");
+  }, []);
+  return null;
+};
+```
+
+4. Import and Use
 
 ```tsx
 // 1. import icons
@@ -44,11 +89,64 @@ import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 h-6 text-blue-500" />
-      <ev-icon svg={svgRadioSolid} />
+      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
     </div>
   );
 }
+```
+
+### In Astro/React
+
+```bash
+npm i @ev-forge/icon-library
+```
+
+2. Add types for web component into tsconfig.json
+
+```json
+{
+  "include": ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]
+}
+```
+
+3. (Optional) For Astro with Server-Side Rendering (SSR):
+   To ensure icons render correctly, you must register the component library on the client-side. Add the script into your Layout
+
+```html
+<script>
+  import "@ev-forge/icon-library";
+</script>
+```
+
+4. Import and Use
+
+```tsx
+// ℹ️ example in react:
+import { svgHomeSolid } from "@ev-forge/icon-library";
+
+function MyApp() {
+  return (
+    <div>
+      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
+    </div>
+  );
+}
+```
+
+```tsx
+// ℹ️ example in astro Jsx:
+---
+import { svgRocketSolid } from "@ev-forge/icon-library";
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <a href="/" class="p-2 flex items-center gap-2">
+  Get Started <ev-icon svg={svgRocketSolid}></ev-icon>
+  </a>
+</Layout>
+
 ```
 
 ## 🎨 Styling

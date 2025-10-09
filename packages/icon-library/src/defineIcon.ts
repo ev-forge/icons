@@ -1,6 +1,6 @@
 
 export const defineMyIcon = () => {
-    // ℹ️ to works on SSR
+    // ℹ️ to run only on client
     if (typeof window === 'undefined') return
 
     const sharedStyle = document.createElement('style');

@@ -12,7 +12,6 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 - **🌳 Perfect Tree-shaking:** The architecture ensures that unused icons are always eliminated from your production build.
 - **🧩 Framework Agnostic:** Built with a native Web Component. Works in React, Svelte, Vue, Astro, or simple HTML without wrappers.
 - **🎨 Intuitive Styling:** Style icons directly with your favorite utility classes. No new APIs to learn.
-- **⚙️ SSR-Safe:** Fully compatible with Server-Side Rendering environments.
 - **🚀 Simple API:** No complex configuration. Import your icon's SVG and pass it to the component.
 
 ---
@@ -29,7 +28,7 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 
 _For a detailed analysis and to reproduce these results, please see the [benchmark package's README](./apps/benchmark-vite-react/README.md)._
 
-## 🏁 Get Started
+## 🏁 Get Started (vite/react)
 
 - install: `npm i @ev-forge/icon-library`
 - set up the types in your tsconfig: `include: ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]`
@@ -50,7 +49,7 @@ function MyApp() {
 }
 ```
 
-For a complete guide on installation, API, and usage examples, please refer to the package's documentation.
+For a deep dive into the API, advanced features, and step-by-step integration guides for popular frameworks like **Next.js** and **Astro**, please see the full package documentation.
 
 ➡️ **[Full `ev-icon` Documentation](./packages/icon-library/README.md)**
 
@@ -77,6 +76,7 @@ We have a clear vision for `@ev-forge/icon-library`. Our future plans include:
 - A streamlined process for community-submitted original icons.
 - Continued performance optimizations for render-time.
 - Enhanced Accessibility: Audit and improve ARIA roles and keyboard interactions.
+- Research and implement full SSR support
 
 ## 📄 License
 
