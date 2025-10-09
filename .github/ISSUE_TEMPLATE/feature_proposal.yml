@@ -17,7 +17,7 @@ body:
     attributes:
       label: "1. What is the problem or use case?"
       description: "A clear description of the problem this feature solves."
-      placeholder: "e.g., The current method for sizing icons is too verbose."
+      placeholder: "e.g., The current method X is too verbose."
     validations:
       required: true
 
@@ -26,7 +26,7 @@ body:
     attributes:
       label: "2. Describe the solution you'd like"
       description: "A clear description of how the feature would work from a user's perspective."
-      placeholder: "e.g., I propose a new `size` prop that accepts 'sm', 'md', 'lg'."
+      placeholder: "e.g., I propose a new `Y` prop that accepts 'foo', 'bar'."
     validations:
       required: true
 
