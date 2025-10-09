@@ -11,7 +11,7 @@ body:
       options:
         - label: I have searched the existing issues and believe this is a new bug.
           required: true
-        - label: I have read the documentation and confirmed my issue is not a misunderstanding of the API.
+        - label: I have read the documentation and my issue is not due to misuse.
           required: true
 
   - type: markdown
