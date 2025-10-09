@@ -1,0 +1,35 @@
+name: ➕ New Icon Request
+description: Suggest a new icon for the library.
+title: "[ICON] "
+labels: ["new icon", "discussion"]
+body:
+  - type: checkboxes
+    id: pre-flight-checklist
+    attributes:
+      label: ✅ Pre-flight Checklist
+      description: Please confirm the following.
+      options:
+        - label: I have searched the existing issues and believe this is a new icon request.
+          required: true
+
+  - type: textarea
+    id: problem-use-case
+    attributes:
+      label: "1. What is the problem or use case?"
+      description: "A clear description of the problem this icon solves."
+      placeholder: "e.g., There is no icon for 'AI chat', which is a common UI element now."
+    validations:
+      required: true
+
+  - type: textarea
+    id: visual-example
+    attributes:
+      label: "2. Visual Examples"
+      description: "Please provide a link to an example, an SVG, or describe the icon visually."
+      placeholder: "e.g., A speech bubble with a small star or sparkle inside."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "---<br>_This is a Request for Comment (RFC) to discuss the viability and design of a proposal before implementation._"
