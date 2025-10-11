@@ -40,6 +40,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ./apps/docs/
           preCommands: |
             wrangler pages project list
             wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main || true
