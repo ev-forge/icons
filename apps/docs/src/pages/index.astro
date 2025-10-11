@@ -13,6 +13,10 @@ import {
   LINKS,
   IMPORT_AND_USE_IT_EXAMPLE,
   INSTALL_EXAMPLE,
+  CREATE_DTS_FILE,
+  ICON_LIBRARY_REGISTER,
+  REGISTER_IN_ASTRO,
+  EXAMPLES_ASTRO,
 } from "../constants";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -117,21 +121,85 @@ import Layout from "../layouts/Layout.astro";
       class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
     >
       <h2 class="text-2xl md:text-4xl">Get Started</h2>
+
       <div>
-        <h3 class="text-xl">Step 1: Install</h3>
-        <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
+        <h3 class="text-xl font-bold">In Vite/React</h3>
+        <div>
+          <h4 class="text-lg">Step 1: Install</h4>
+          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">
+            Step 2: add the web component types into your tsconfig.ts
+          </h4>
+          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">Step 3: Import and use it</h4>
+          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
+        </div>
       </div>
 
       <div>
-        <h3 class="text-xl">
-          Step 2: add the web component types into your tsconfig.ts
-        </h3>
-        <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
+        <h3 class="text-xl font-bold">In NextJs</h3>
+        <div>
+          <h4 class="text-lg">Step 1: Install</h4>
+          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">
+            Step 2: add the web component, create a file ev-icon-library.d.ts
+            and copy inside
+          </h4>
+          <pre><code>{CREATE_DTS_FILE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">
+            Step 3: (Optional) For Next.js with Server-Side Rendering (SSR): To
+            ensure icons render correctly, you must register the component
+            library on the client-side. Create the file
+            `IconLibraryRegistry.tsx` and paste the following code:
+          </h4>
+          <pre><code class="language-jsx">{ICON_LIBRARY_REGISTER}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">Step 4: Import and Use</h4>
+          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
+        </div>
       </div>
 
       <div>
-        <h3 class="text-xl">Step 3: Import and use it</h3>
-        <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
+        <h3 class="text-xl font-bold">In Astro/React</h3>
+        <div>
+          <h4 class="text-lg">Step 1: Install</h4>
+          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">
+            Step 2: add the web component types into your tsconfig.ts
+          </h4>
+          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">
+            Step 3: (Optional) For Astro with Server-Side Rendering (SSR): To
+            ensure icons render correctly, you must register the component
+            library on the client-side. Add the script into your Layout
+          </h4>
+          <pre><code class="language-jsx">{REGISTER_IN_ASTRO}</code></pre>
+        </div>
+
+        <div>
+          <h4 class="text-lg">Step 4: Import and Use</h4>
+          <pre><code class="language-jsx">{EXAMPLES_ASTRO}</code></pre>
+        </div>
       </div>
 
       <div class="flex flex-col items-center gap-4">
