@@ -8,17 +8,9 @@
     "url": "https://github.com/ev-forge/icon-library.git"
   },
   "scripts": {
-    "dev:doc": "pnpm --filter ./apps/docs dev",
-    "dev:lib": "pnpm --filter ./packages/icon-library dev",
     "sync": "pnpm --filter ./packages/icon-library sync",
-    "build:doc": "pnpm --filter ./apps/docs build",
-    "build:lib": "pnpm --filter ./packages/icon-library build",
-    "build": "pnpm build:lib && pnpm build:doc",
-    "lint": "pnpm -r lint",
-    "release:patch": "pnpm --filter @ev-forge/icon-library exec pnpm version patch && git push && git push --tags",
-    "release:minor": "pnpm --filter @ev-forge/icon-library exec pnpm version minor && git push && git push --tags",
-    "release:major": "pnpm --filter @ev-forge/icon-library exec pnpm version major && git push && git push --tags",
-    "release:publish": "pnpm --filter @ev-forge/icon-library publish"
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r lint"
   },
   "packageManager": "pnpm@9.1.0",
   "keywords": [],
