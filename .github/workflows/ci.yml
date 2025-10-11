@@ -18,16 +18,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9.1
+          run_install: true
+
       # enable cache to download only the different packages -> more quickly
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: "pnpm"
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9.1
-          run_install: true
 
       - run: pnpm lint
       - run: pnpm build

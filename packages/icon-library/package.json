@@ -10,7 +10,7 @@
     "url": "https://github.com/ev-forge/ev-icon-library.git",
     "directory": "packages/ev-icon"
   },
-  "bugs": "https://github.com/withastro/astro/issues",
+  "bugs": "https://github.com/ev-forge/ev-icon-library/issues",
   "homepage": "https://github.com/ev-forge/ev-icon-library",
   "main": "./dist/ev-icon.cjs.js",
   "module": "./dist/ev-icon.es.js",

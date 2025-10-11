@@ -31,6 +31,8 @@ jobs:
           cache: "pnpm"
 
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run sync
+      - run: pnpm --filter icon-library build
       - run: pnpm --filter docs build
 
       - name: Publish to Cloudflare Pages
