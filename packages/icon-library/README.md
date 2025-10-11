@@ -146,7 +146,6 @@ import Layout from "../layouts/Layout.astro";
   Get Started <ev-icon svg={svgRocketSolid}></ev-icon>
   </a>
 </Layout>
-
 ```
 
 ## 🎨 Styling

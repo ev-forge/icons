@@ -1,0 +1,45 @@
+name: Deploy Docs to Cloudflare
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  EV_TOKEN: ${{ secrets.EV_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      # enable cache to download only the different packages -> more quickly
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter docs build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: |
+            wrangler pages project list
+            wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main || true
+          command: pages deploy apps/docs/dist --project-name=${{ secrets.CLOUDFLARE_DOCS_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

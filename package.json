@@ -24,6 +24,7 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.29.7",
     "@types/node": "^24.5.2",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
