@@ -31,7 +31,7 @@ import {
   svgWSolid,
   svgXingSquareBrands,
   svgZapSolid,
-} from "@ev-forge/icon-library";
+} from "@ev-forge/icons";
 import Wrapper from "../Wrapper";
 
 const TEST_CASE = [
@@ -71,7 +71,7 @@ const TEST_CASE = [
 const EV = () => {
   return (
     <Wrapper
-      title={`Dashboard with ev-icon-library with ${TEST_CASE.length} icons`}
+      title={`Dashboard with @ev-forge/icons with ${TEST_CASE.length} icons`}
     >
       {TEST_CASE.map((c, i) => (
         <article

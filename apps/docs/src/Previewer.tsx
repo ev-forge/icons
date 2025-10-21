@@ -8,7 +8,7 @@ import {
   svgHomeSolid,
   svgNodeBrands,
   svgZSolid,
-} from "@ev-forge/icon-library";
+} from "@ev-forge/icons";
 
 // const icons = Object.entries(evIconLibrary);
 
@@ -16,7 +16,7 @@ export const Previewer = () => {
   // console.log({ icons });
   return (
     <main>
-      <h1>ev-icon-library</h1>
+      <h1>@ev-forge/icons</h1>
       <div className="flex flex-wrap gap-20">
         <ev-icon
           svg={svgHomeSolid}

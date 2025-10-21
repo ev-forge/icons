@@ -1,5 +1,5 @@
-import { svgSearchSolid } from "@ev-forge/icon-library";
-import { metadata } from "@ev-forge/icon-library";
+import { svgSearchSolid } from "@ev-forge/icons";
+import { metadata } from "@ev-forge/icons";
 import { useMemo, useState } from "react";
 import { Box } from "../Box";
 import { useDebounce } from "../hooks/useDebounce";

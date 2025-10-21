@@ -1,21 +1,21 @@
-# @ev-forge/icon-library
+# @ev-forge/icons
 
-[![NPM Version](https://img.shields.io/npm/v/@ev-forge/icon-library)](https://www.npmjs.com/package/@ev-forge/icon-library)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@ev-forge/icon-library)](https://bundlephobia.com/package/@ev-forge/icon-library)
+[![NPM Version](https://img.shields.io/npm/v/@ev-forge/icons)](https://www.npmjs.com/package/@ev-forge/icons)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/@ev-forge/icons)](https://bundlephobia.com/package/@ev-forge/icons)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.
 
-<!-- ➡️ **Visit the main project repository:** [github.com/ev-forge/icon-library](https://github.com/ev-forge/icon-library) -->
+<!-- ➡️ **Visit the main project repository:** [github.com/ev-forge/icons](https://github.com/ev-forge/icons) -->
 
 ---
 
 ## ✨ Philosophy
 
-`@ev-forge/icon-library` is designed with three core principles:
+`@ev-forge/icons` is designed with three core principles:
 
 1.  **Performance First:** The library uses an architecture that allows for perfect, icon-level tree-shaking. Your final bundle will only include the icons you explicitly import, resulting in the smallest possible footprint.
-2.  **Framework Agnostic:** Built with native Web Components, `ev-forge/icon-library` works seamlessly in any environment—React, Svelte, Vue, Astro, or simple HTML—without wrappers or overhead.
+2.  **Framework Agnostic:** Built with native Web Components, `@ev-forge/icons` works seamlessly in any environment—React, Svelte, Vue, Astro, or simple HTML—without wrappers or overhead.
 3.  **Simplicity:** The API is designed to be minimal and intuitive. Style icons with your favorite utility classes.
 
 ## 🏁 Get Started
@@ -25,21 +25,21 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 1. Installation
 
 ```bash
-npm i @ev-forge/icon-library
+npm i @ev-forge/icons
 ```
 
 2. Add types for web component into tsconfig.json
 
 ```json
 {
-  "include": ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]
+  "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
 }
 ```
 
 3. Import and Use
 
 ```tsx
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
+import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
 
 function MyApp() {
   return (
@@ -53,14 +53,14 @@ function MyApp() {
 ### In NextJs
 
 ```bash
-npm i @ev-forge/icon-library
+npm i @ev-forge/icons
 ```
 
-2. Add types for web component, create a file `ev-icon-library.d.ts` and copy inside
+2. Add types for web component, create a file `ev-forge-icons.d.ts` and copy inside
 
 ```ts
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" />
+/// <reference path="node_modules/@ev-forge/icons/dist/global.d.ts" />
 ```
 
 3. (Optional) For Next.js with Server-Side Rendering (SSR):
@@ -73,7 +73,7 @@ import { useEffect } from "react";
 
 export const IconLibraryRegistry = () => {
   useEffect(() => {
-    import("@ev-forge/icon-library");
+    import("@ev-forge/icons");
   }, []);
   return null;
 };
@@ -83,7 +83,7 @@ export const IconLibraryRegistry = () => {
 
 ```tsx
 // 1. import icons
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
+import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
 
 // 2. use them in ev-icon
 function MyApp() {
@@ -98,14 +98,14 @@ function MyApp() {
 ### In Astro/React
 
 ```bash
-npm i @ev-forge/icon-library
+npm i @ev-forge/icons
 ```
 
 2. Add types for web component into tsconfig.json
 
 ```json
 {
-  "include": ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]
+  "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
 }
 ```
 
@@ -114,7 +114,7 @@ npm i @ev-forge/icon-library
 
 ```html
 <script>
-  import "@ev-forge/icon-library";
+  import "@ev-forge/icons";
 </script>
 ```
 
@@ -122,7 +122,7 @@ npm i @ev-forge/icon-library
 
 ```tsx
 // ℹ️ example in react:
-import { svgHomeSolid } from "@ev-forge/icon-library";
+import { svgHomeSolid } from "@ev-forge/icons";
 
 function MyApp() {
   return (
@@ -136,7 +136,7 @@ function MyApp() {
 ```tsx
 // ℹ️ example in astro Jsx:
 ---
-import { svgRocketSolid } from "@ev-forge/icon-library";
+import { svgRocketSolid } from "@ev-forge/icons";
 
 import Layout from "../layouts/Layout.astro";
 ---
@@ -203,13 +203,13 @@ For projects without a JavaScript bundler, we recommend copying the raw SVG cont
 
 The icon modules are split into three categories. You can import them from:
 
-- `@ev-forge/icon-library/solid`
-- `@ev-forge/icon-library/regular`
-- `@ev-forge/icon-library/brands` -->
+- `@ev-forge/icons/solid`
+- `@ev-forge/icons/regular`
+- `@ev-forge/icons/brands` -->
 
 <!-- ## 🤝 Contributing
 
-This is a community-driven project. We welcome contributions, especially new original icons! Please see the main repository's [Contributing Guide](https://github.com/ev-forge/icon-library/blob/main/CONTRIBUTING.md). -->
+This is a community-driven project. We welcome contributions, especially new original icons! Please see the main repository's [Contributing Guide](https://github.com/ev-forge/icons/blob/main/CONTRIBUTING.md). -->
 
 ## 📄 License
 

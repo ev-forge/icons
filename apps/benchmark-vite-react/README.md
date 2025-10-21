@@ -1,10 +1,10 @@
 # Benchmark: Vite + React SPA
 
-This app benchmarks the performance of `@ev-forge/icon-library` against `@fortawesome/react-fontawesome`.
+This app benchmarks the performance of `@ev-forge/icons` against `@fortawesome/react-fontawesome`.
 
 It measures **Final Bundle Impact** (tree-shaking) and **Client Load Performance** (Lighthouse metrics) when rendering a set of 32 unique icons.
 
-➡️ **Return to the main repository:** [github.com/es-forge/icon-library](https://github.com/ev-forge/icon-library)
+➡️ **Return to the main repository:** [github.com/es-forge/icons](https://github.com/ev-forge/icons)
 
 ---
 
@@ -19,7 +19,7 @@ This measurement shows the total size of the library's modules included in the f
 | Library                          | Bundle Size (gzip) | Reduction |
 | :------------------------------- | :----------------: | :-------: |
 | `@fortawesome/react-fontawesome` |      ~184 KB       |     -     |
-| **`@ev-forge/icon-library`**     |     **~27 KB**     | **~85%**  |
+| **`@ev-forge/icons`**            |     **~27 KB**     | **~85%**  |
 
 ![Bundle Size Comparison](public/bundle-results.png)
 

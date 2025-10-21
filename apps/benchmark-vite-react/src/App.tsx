@@ -16,7 +16,7 @@ function App() {
             Alternative: Framework-Agnostic Web Components
           </h2>
           <a href="/ev" className="underline text-blue-400">
-            Rendering with ev-icon-library
+            Rendering with @ev-forge/icons
           </a>
         </div>
       </div>

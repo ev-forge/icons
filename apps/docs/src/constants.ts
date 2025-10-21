@@ -1,8 +1,8 @@
-export const INSTALL_EXAMPLE = `npm i @ev-forge/icon-library`
+export const INSTALL_EXAMPLE = `npm i @ev-forge/icons`
 export const ADD_TYPES_EXAMPLE = `{
-    "include": ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]
+    "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
 }`
-export const IMPORT_AND_USE_IT_EXAMPLE = `import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
+export const IMPORT_AND_USE_IT_EXAMPLE = `import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
 
 function MyApp() {
   return (
@@ -13,7 +13,7 @@ function MyApp() {
 }`
 
 export const CREATE_DTS_FILE = `// eslint-disable-next-line @typescript-eslint/triple-slash-reference
-/// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" />`
+/// <reference path="node_modules/@ev-forge/icons/dist/global.d.ts" />`
 
 export const ICON_LIBRARY_REGISTER = `"use client";
 
@@ -21,17 +21,17 @@ import { useEffect } from "react";
 
 export const IconLibraryRegistry = () => {
   useEffect(() => {
-    import("@ev-forge/icon-library");
+    import("@ev-forge/icons");
   }, []);
   return null;
 };`
 
 export const REGISTER_IN_ASTRO = `<script>
-  import "@ev-forge/icon-library";
+  import "@ev-forge/icons";
 </script>`
 
 export const EXAMPLES_ASTRO = `// ℹ️ example in react:
-import { svgHomeSolid } from "@ev-forge/icon-library";
+import { svgHomeSolid } from "@ev-forge/icons";
 
 function MyApp() {
   return (
@@ -44,7 +44,7 @@ function MyApp() {
 
 // ℹ️ example in astro Jsx:
 ---
-import { svgRocketSolid } from "@ev-forge/icon-library";
+import { svgRocketSolid } from "@ev-forge/icons";
 
 import Layout from "../layouts/Layout.astro";
 ---
@@ -57,8 +57,8 @@ import Layout from "../layouts/Layout.astro";
 
 export const LINKS = {
   "ev-forge": "https://github.com/ev-forge",
-  "ev-icon-library": "https://github.com/ev-forge/ev-icon-library",
-  "ev-icon-library-license": "https://github.com/ev-forge/ev-icon-library?tab=MIT-1-ov-file#readme",
+  "ev-forge-icons": "https://github.com/ev-forge/icons",
+  "ev-forge-icons-license": "https://github.com/ev-forge/icons?tab=MIT-1-ov-file#readme",
   "ev": "https://github.com/elVengador",
   "fa": "https://fontawesome.com",
   "browser-icons": "/browser"

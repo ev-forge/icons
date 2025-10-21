@@ -6,7 +6,7 @@ import {
   svgRocketSolid,
   svgSearchSolid,
   svgStarSolid,
-} from "@ev-forge/icon-library";
+} from "@ev-forge/icons";
 
 import {
   ADD_TYPES_EXAMPLE,
@@ -30,11 +30,11 @@ import Layout from "../layouts/Layout.astro";
         One Icon Library for Every Framework, Bundling Only What You Use
       </h1>
       <p class="text:lg md:text-2xl">
-        <span class="font-bold">ev-icon-library</span> is a framework-agnostic JS
+        <span class="font-bold">@ev-forge/icons</span> is a framework-agnostic JS
         tool that delivers Font Awesome's high-quality icons, powered by icon-level
         tree-shaking for the smallest possible bundle size. If this helps you, please
         gift us a <a
-          href={LINKS["ev-icon-library"]}
+          href={LINKS["ev-forge-icons"]}
           class="border-b border-dashed border-ev-dark"
           >star on GitHub! <ev-icon svg={svgStarSolid} class="text-yellow-500"
           ></ev-icon></a
@@ -85,7 +85,7 @@ import Layout from "../layouts/Layout.astro";
         bundle their entire set, bloating your app when you only need a few.
         Others are small but have a limited selection, while massive collections
         often lack design consistency. <span class="font-bold"
-          >ev-icon-library</span
+          >@ev-forge/icons</span
         > is designed to solve all three issues.
       </p>
       <p>
@@ -107,7 +107,7 @@ import Layout from "../layouts/Layout.astro";
           <li>
             <span class="font-bold"
               >Embrace the Platform, Empower the Community</span
-            > By building on native Web Components, ev-icon-library works in any
+            > By building on native Web Components, @ev-forge/icons works in any
             framework. We extend this foundation by allowing the community to contribute
             in a thoughtfully curated way, ensuring the icon set remains consistent
             and valuable for everyone.
@@ -151,8 +151,8 @@ import Layout from "../layouts/Layout.astro";
 
         <div>
           <h4 class="text-lg">
-            Step 2: add the web component, create a file ev-icon-library.d.ts
-            and copy inside
+            Step 2: add the web component, create a file ev-forge-icons.d.ts and
+            copy inside
           </h4>
           <pre><code>{CREATE_DTS_FILE}</code></pre>
         </div>

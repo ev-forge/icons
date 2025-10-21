@@ -1,5 +1,5 @@
 {
-  "name": "@ev-forge/icon-library",
+  "name": "@ev-forge/icons",
   "version": "0.1.1",
   "description": "A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.",
   "type": "module",
@@ -7,11 +7,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ev-forge/ev-icon-library.git",
+    "url": "https://github.com/ev-forge/icons.git",
     "directory": "packages/ev-icon"
   },
-  "bugs": "https://github.com/ev-forge/ev-icon-library/issues",
-  "homepage": "https://github.com/ev-forge/ev-icon-library",
+  "bugs": "https://github.com/ev-forge/icons/issues",
+  "homepage": "https://github.com/ev-forge/icons",
   "main": "./dist/ev-icon.cjs.js",
   "module": "./dist/ev-icon.es.js",
   "types": "./dist/index.d.ts",

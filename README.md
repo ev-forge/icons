@@ -1,7 +1,7 @@
-# ev-icon-library
+# Icons Monorepo
 
-[![NPM Version](https://img.shields.io/npm/v/@ev-forge/icon-library)](https://www.npmjs.com/package/@ev-forge/icon-library)
-[![CI Status](https://github.com/tu-usuario/@ev-forge/icon-library-library/actions/workflows/ci.yml/badge.svg)](https://github.com/tu-usuario/@ev-forge/icon-library-library/actions/workflows/ci.yml)
+[![NPM Version](https://img.shields.io/npm/v/@ev-forge/icons)](https://www.npmjs.com/package/@ev-forge/icons)
+[![CI Status](https://github.com/tu-usuario/@ev-forge/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/tu-usuario/@ev-forge/icons/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.
@@ -18,25 +18,25 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 
 ## 🚀 Performance Snapshot
 
-`@ev-forge/icon-library` is designed for performance. In a benchmark simulating a modern application (a Vite + React SPA loading 32 unique icons), `@ev-forge/icon-library` demonstrates a significantly smaller impact on the final bundle.
+`@ev-forge/icons` is designed for performance. In a benchmark simulating a modern application (a Vite + React SPA loading 32 unique icons), `@ev-forge/icons` demonstrates a significantly smaller impact on the final bundle.
 
 **Benchmark Results:**
 | Library | Bundle Impact (gzip) |
 | :--- | :--- |
 | **`@fortawesome/react-fontawesome`** | `~144 KB` |
-| **`@ev-forge/icon-library`** | `~26 KB` |
+| **`@ev-forge/icons`** | `~26 KB` |
 
 _For a detailed analysis and to reproduce these results, please see the [benchmark package's README](./apps/benchmark-vite-react/README.md)._
 
 ## 🏁 Get Started (vite/react)
 
-- install: `npm i @ev-forge/icon-library`
-- set up the types in your tsconfig: `include: ["node_modules/@ev-forge/icon-library/dist/global.d.ts"]`
+- install: `npm i @ev-forge/icons`
+- set up the types in your tsconfig: `include: ["node_modules/@ev-forge/icons/dist/global.d.ts"]`
 - import and use it:
 
 ```tsx
 // 1. import icons
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icon-library";
+import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
 
 // 2. use them in ev-icon
 function MyApp() {
@@ -51,7 +51,7 @@ function MyApp() {
 
 For a deep dive into the API, advanced features, and step-by-step integration guides for popular frameworks like **Next.js** and **Astro**, please see the full package documentation.
 
-➡️ **[Full `ev-icon` Documentation](./packages/icon-library/README.md)**
+➡️ **[Full `ev-icon` Documentation](./packages/icons/README.md)**
 
 ## monorepo-info-begin
 
@@ -59,7 +59,7 @@ This monorepo contains the following packages, managed with `pnpm` workspaces:
 
 | Package                                                           | Description                                       |
 | :---------------------------------------------------------------- | :------------------------------------------------ |
-| 📦 **[`packages/icon-library`](./packages/icon-library)**         | The core icon library, published to npm.          |
+| 📦 **[`packages/icons`](./packages/icons)**                       | The core icon library, published to npm.          |
 | 🌐 **[`apps/docs`](./apps/docs)**                                 | The official landing page and browser icons site. |
 | 📊 **[`apps/benchmark-vite-react`](./apps/benchmark-vite-react)** | The performance benchmark app for Vite + React.   |
 
@@ -71,7 +71,7 @@ Contributions are welcome! Please read our [**Contributing Guide**](./CONTRIBUTI
 
 ## 🗺️ Roadmap
 
-We have a clear vision for `@ev-forge/icon-library`. Our future plans include:
+We have a clear vision for `@ev-forge/icons`. Our future plans include:
 
 - A streamlined process for community-submitted original icons.
 - Continued performance optimizations for render-time.

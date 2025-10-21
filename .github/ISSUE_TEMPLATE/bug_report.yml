@@ -57,4 +57,4 @@ body:
       value: |
         - OS:
         - Browser:
-        - `ev-icon-library` Version:
+        - `@ev-forge/icons` Version:

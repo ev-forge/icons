@@ -2,8 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const ICONS_SOURCE_DIR = path.resolve(__dirname, '../packages/ev-icon/src/assets');
-const OUTPUT_DIR = path.resolve(__dirname, '../packages/ev-icon/src/generated');
+const ICONS_SOURCE_DIR = path.resolve(__dirname, '../packages/icons/src/assets');
+const OUTPUT_DIR = path.resolve(__dirname, '../packages/icons/src/generated');
 const ICON_CATEGORIES = ['brands', 'regular', 'solid'];
 
 function main() {
@@ -34,7 +34,7 @@ function main() {
     console.log("✅ [2/4] types generated");
     generateMetadataFiles(OUTPUT_DIR, ICON_CATEGORIES, allIcons);
     console.log("✅ [3/4] data generated");
-    console.log("🎉 [4/4] files at ev-icon/src/generated");
+    console.log("🎉 [4/4] files at icons/src/generated");
 }
 
 function generateTypeFiles(outputDir, categories, allIcons) {

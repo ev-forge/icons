@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
-    "@ev-forge/icon-library": "workspace:*",
+    "@ev-forge/icons": "workspace:*",
     "@tailwindcss/vite": "^4.1.14",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
