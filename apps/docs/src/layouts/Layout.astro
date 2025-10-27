@@ -1,6 +1,9 @@
 ---
+import { svgGithubBrands } from "@ev-forge/icons";
+import { Header, Link } from "@ev-forge/components";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { LINKS } from "../constants";
 
 const { title } = Astro.props;
 ---
@@ -17,8 +20,20 @@ const { title } = Astro.props;
     </script>
   </head>
   <body class="bg-ev-background text-ev-foreground">
-    <slot />
-  </body>
+    <!-- <Header client:only="react"> -->
 
-  <Footer />
+    <header
+      class="w-full max-w-[800px] mx-auto flex items-center justify-between"
+    >
+      <a href="http://">@ev-forge/icons</a>
+      <a href={LINKS["ev-forge-icons"]} class="">
+        <ev-icon svg={svgGithubBrands} class="text-2xl bg-ev-background"
+        ></ev-icon></a
+      >
+    </header>
+    <!-- </Header> -->
+
+    <slot />
+    <Footer />
+  </body>
 </html>

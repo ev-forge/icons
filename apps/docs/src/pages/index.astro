@@ -1,11 +1,10 @@
 ---
 import {
-  svgBoxArchiveSolid,
-  svgPaletteSolid,
-  svgPuzzlePieceSolid,
+  svgDogSolid,
+  svgExternalLinkAltSolid,
+  svgPersonWalkingSolid,
   svgRocketSolid,
   svgSearchSolid,
-  svgStarSolid,
 } from "@ev-forge/icons";
 
 import {
@@ -24,53 +23,38 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <main class="flex flex-col items-center gap-10">
     <section
-      class="w-full max-w-[800px] min-h-dvh p-4 flex flex-col justify-center gap-4 md:gap-10"
+      class="w-full max-w-[800px] min-h-dvh p-4 flex flex-col items-center justify-center gap-4 md:gap-10"
     >
-      <h1 class="text-4xl md:text-6xl">
-        One Icon Library for Every Framework, Bundling Only What You Use
+      <h1 class="text-4xl text-center md:text-6xl">
+        The Last Icon Library You’ll Ever Need
       </h1>
-      <p class="text:lg md:text-2xl">
-        <span class="font-bold">@ev-forge/icons</span> is a framework-agnostic JS
-        tool that delivers Font Awesome's high-quality icons, powered by icon-level
-        tree-shaking for the smallest possible bundle size. If this helps you, please
-        gift us a <a
-          href={LINKS["ev-forge-icons"]}
-          class="border-b border-dashed border-ev-dark"
-          >star on GitHub! <ev-icon svg={svgStarSolid} class="text-yellow-500"
-          ></ev-icon></a
-        >
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgBoxArchiveSolid}></ev-icon> Tiny Bundle
-            </h3>
-            <p>Only the icons you import are included in your build.</p>
-          </div>
+      <p class="text-center text:lg md:text-2xl">
+        <span class="font-bold">@ev-forge/icons</span> is an open-source engine that unleashes
+        the full power of Font Awesome's massive library with a modern: <span
+          class="font-bold">perfect tree-shaking, agnostic JSX</span
+        > and <span class="font-bold">community extensible</span>
 
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgPuzzlePieceSolid}></ev-icon> For Any JSX
-            </h3>
-            <p>Use it in React, Svelte, Vue, or any JSX-based environment.</p>
+        <div class="pt-12 flex flex-col justify-center items-center gap-4">
+          <div class="relative w-full max-w-3xs">
+            <ev-icon
+              svg={svgDogSolid}
+              class="absolute text-base bottom-0 right-24"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingSolid}
+              class="absolute text-2xl bottom-0 right-16"></ev-icon>
+            <ev-icon
+              svg={svgRocketSolid}
+              class="absolute text-5xl -rotate-45 bottom-0 right-0"></ev-icon>
           </div>
-
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgPaletteSolid}></ev-icon> Simple Styling
-            </h3>
-            <p>Style icons with your favorite utility classes</p>
-          </div>
-        </div>
-        <div class="flex justify-center items-center gap-4">
           <a
             href="#get-started"
-            class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
-            >Get Started <ev-icon svg={svgRocketSolid}></ev-icon></a
-          >
+            class="w-full max-w-3xs p-2 text-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
+            >Get Started
+          </a>
           <a
             href={LINKS["browser-icons"]}
-            class="p-2 flex items-center gap-2 border-2 border-ev-secondary rounded-md"
-            >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
+            class="w-full max-w-3xs p-2 flex items-center justify-center gap-2 border-2 border-ev-secondary rounded-md"
+            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon></a
           >
         </div>
       </p>
@@ -79,7 +63,10 @@ import Layout from "../layouts/Layout.astro";
     <section
       class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
     >
-      <h2 class="text-2xl md:text-4xl">Performance Meets Design Consistency</h2>
+      <h2 class="text-2xl md:text-4xl">Getting Started</h2>
+
+      <h3>With Vite/React</h3>
+      <!--  -->
       <p>
         The modern web presents a frustrating choice for icons. Many libraries
         bundle their entire set, bloating your app when you only need a few.
