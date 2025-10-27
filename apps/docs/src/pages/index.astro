@@ -2,6 +2,7 @@
 import {
   svgBoxArchiveSolid,
   svgPaletteSolid,
+  svgPersonWalkingSolid,
   svgPuzzlePieceSolid,
   svgRocketSolid,
   svgSearchSolid,
@@ -42,6 +43,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
           <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
             <h3 class="font-semibold">
+              <ev-icon svg={svgPersonWalkingSolid}></ev-icon>
               <ev-icon svg={svgBoxArchiveSolid}></ev-icon> Tiny Bundle
             </h3>
             <p>Only the icons you import are included in your build.</p>
