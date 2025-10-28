@@ -1,10 +1,8 @@
 ---
 import {
-  svgCloudRegular,
   svgCloudSolid,
   svgDogSolid,
   svgExternalLinkAltSolid,
-  svgGlobeSolid,
   svgParachuteBoxSolid,
   svgPersonBikingSolid,
   svgPersonDressSolid,
@@ -12,6 +10,7 @@ import {
   svgPersonWalkingSolid,
   svgPersonWalkingWithCaneSolid,
   svgRocketSolid,
+  svgWheelchairMoveSolid,
 } from "@ev-forge/icons";
 
 import { Link } from "@ev-forge/components";
@@ -64,7 +63,7 @@ import { CodeBlock } from "../components/CodeBlock";
 
           <Link
             href={LINKS["browser-icons"]}
-            className="py-[6px] px-[14px] flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
+            className="py-1.5 px-3.5 flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
             >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon>
           </Link>
         </div>
@@ -115,6 +114,111 @@ import { CodeBlock } from "../components/CodeBlock";
         <span class="font-bold">Step 4:</span> Import and use it
         <CodeBlock client:only="react" code={EXAMPLE_REACT} lang="typescript" />
       </p>
+    </section>
+    <section class="w-full h-dvh">
+      <div class="w-full h-3/5 bg-[#3669B5]">
+        <div
+          class="w-full max-w-[800px] h-full mx-auto flex flex-col items-center justify-between"
+        >
+          <div
+            class="w-full flex-1 px-4 flex flex-col items-center justify-center"
+          >
+            <h2
+              class="text-2xl text-center font-bold text-ev-destructive-contrast py-8 md:text-4xl"
+            >
+              The vision
+            </h2>
+            <p class="text-ev-destructive-contrast text-center">
+              Imagine a future where we have an vast of valuable high quality of
+              icons. Where the community define the standard of the icons with
+              RFCs, where designer craft every icon and the community take
+              advantage of it.
+            </p>
+          </div>
+          <div class="relative w-full max-w-[343px] h-[140px]">
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] left-12"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[118px] left-24"
+            ></ev-icon>
+            <ev-icon
+              svg={svgParachuteBoxSolid}
+              class="absolute text-[#FFC909] text-5xl translate-x-1/2 bottom-[72px] right-1/2"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[119px] right-28"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-24"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-9"
+            ></ev-icon>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-2/5 bg-[#93AC75]">
+        <div
+          class="w-full max-w-[800px] h-full mx-auto flex flex-col items-center justify-between"
+        >
+          <div class="relative w-full max-w-[343px] h-12">
+            <ev-icon
+              svg={svgDogSolid}
+              class="absolute text-base bottom-1 left-[29px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingSolid}
+              class="absolute text-2xl bottom-2 left-[49px]"></ev-icon>
+            <ev-icon
+              svg={svgWheelchairMoveSolid}
+              class="absolute text-2xl bottom-11 left-[77px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[26px] left-[119px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-6 left-32"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-[42px] left-[137px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingWithCaneSolid}
+              class="absolute text-2xl bottom-0 right-[108px] rotate-x-370 rotate-y-200"
+            ></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl translate-x-1/2 bottom-4 right-1/2"
+            ></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-[26px] right-[151px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[42px] right-[142px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-7 right-[121px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[30px] right-[108px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonBikingSolid}
+              class="absolute text-2xl bottom-[42px] right-[29px] rotate-x-360 rotate-y-220"
+            ></ev-icon>
+          </div>
+          <p
+            class="flex-1 text-center px-4 flex items-center justify-center-center font-bold h-12"
+          >
+            We are opening the door for a new era of creativity and
+            collaboration
+          </p>
+        </div>
+      </div>
     </section>
   </main>
 </Layout>
