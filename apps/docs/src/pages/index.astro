@@ -1,10 +1,19 @@
 ---
 import {
+  svgCloudRegular,
+  svgCloudSolid,
   svgDogSolid,
   svgExternalLinkAltSolid,
+  svgGlobeSolid,
+  svgParachuteBoxSolid,
+  svgPersonBikingSolid,
+  svgPersonDressSolid,
+  svgPersonSolid,
   svgPersonWalkingSolid,
+  svgPersonWalkingWithCaneSolid,
   svgRocketSolid,
   svgSearchSolid,
+  svgWheelchairMoveSolid,
 } from "@ev-forge/icons";
 
 import {
@@ -139,102 +148,87 @@ import CodeBlock from "../components/CodeBlock.astro";
     </section>
 
     <section
-      id="get-started"
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
+      class="w-full max-w-[800px] h-full min-h-dvh p-4 flex flex-col justify-center gap-9 bg-linear-[180deg,#3669B5_62%,#93AC75_40%] md:gap-16"
     >
-      <h2 class="text-2xl md:text-4xl">Get Started</h2>
+      <h2
+        class="text-2xl text-center font-bold text-ev-destructive-contrast md:text-4xl"
+      >
+        The vision
+      </h2>
+      <p class="text-ev-destructive-contrast text-center">
+        Imagine a future where we have an vast of valuable high quality of
+        icons. Where the community define the standard of the icons with RFCs,
+        where designer craft every icon and the community take advantage of it.
+      </p>
+      <div class="relative w-full max-w-[375px] h-48 mx-auto flex">
+        <ev-icon
+          svg={svgCloudSolid}
+          class="absolute text-ev-destructive-contrast text-3xl top-3 left-12"
+        ></ev-icon>
+        <ev-icon
+          svg={svgCloudSolid}
+          class="absolute text-ev-destructive-contrast text-3xl top-0 left-24"
+        ></ev-icon>
+        <ev-icon
+          svg={svgParachuteBoxSolid}
+          class="absolute text-[#FFC909] text-5xl translate-x-1/2 top-3 right-1/2"
+        ></ev-icon>
+        <ev-icon
+          svg={svgCloudSolid}
+          class="absolute text-ev-destructive-contrast text-3xl top-0 right-28"
+        ></ev-icon>
+        <ev-icon
+          svg={svgCloudSolid}
+          class="absolute text-ev-destructive-contrast text-3xl top-3 right-24"
+        ></ev-icon>
+        <ev-icon
+          svg={svgCloudSolid}
+          class="absolute text-ev-destructive-contrast text-3xl top-3 right-9"
+        ></ev-icon>
 
-      <div>
-        <h3 class="text-xl font-bold">In Vite/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 3: Import and use it</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
+        <ev-icon svg={svgDogSolid} class="absolute text-base bottom-11 left-9"
+        ></ev-icon>
+        <ev-icon
+          svg={svgPersonWalkingSolid}
+          class="absolute text-2xl bottom-12 left-14"></ev-icon>
+        <ev-icon
+          svg={svgWheelchairMoveSolid}
+          class="absolute text-2xl bottom-16 left-24"></ev-icon>
+        <ev-icon
+          svg={svgPersonDressSolid}
+          class="absolute text-2xl bottom-14 left-[132px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonSolid}
+          class="absolute text-2xl bottom-16 left-36"></ev-icon>
+        <ev-icon
+          svg={svgPersonSolid}
+          class="absolute text-2xl bottom-13 left-[150px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonWalkingWithCaneSolid}
+          class="absolute text-2xl bottom-11 left-[166px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonSolid}
+          class="absolute text-2xl translate-x-1/2 bottom-14 right-1/2"
+        ></ev-icon>
+        <ev-icon
+          svg={svgPersonSolid}
+          class="absolute text-2xl bottom-14 right-[151px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonDressSolid}
+          class="absolute text-2xl bottom-18 right-[142px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonSolid}
+          class="absolute text-2xl bottom-[68px] right-[121px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonDressSolid}
+          class="absolute text-2xl bottom-[70px] right-[108px]"></ev-icon>
+        <ev-icon
+          svg={svgPersonBikingSolid}
+          class="absolute text-2xl bottom-18 right-[37px]"></ev-icon>
       </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In NextJs</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component, create a file ev-forge-icons.d.ts and
-            copy inside
-          </h4>
-          <pre><code>{CREATE_DTS_FILE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Next.js with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Create the file
-            `IconLibraryRegistry.tsx` and paste the following code:
-          </h4>
-          <pre><code class="language-jsx">{ICON_LIBRARY_REGISTER}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In Astro/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Astro with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Add the script into your Layout
-          </h4>
-          <pre><code class="language-jsx">{REGISTER_IN_ASTRO}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{EXAMPLES_ASTRO}</code></pre>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-center gap-4">
-        <p class="font-semibold text-center text-2xl">
-          Done! That's all it takes. For a full list of available icons, head
-          over to our Icon Browser.
-        </p>
-        <a
-          href={LINKS["browser-icons"]}
-          class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md"
-          >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
-        >
-      </div>
+      <p class="text-center font-bold">
+        We are opening the door for a new era of creativity and collaboration
+      </p>
     </section>
   </main>
 </Layout>
