@@ -1,5 +1,6 @@
 @config "../../tailwind.config";
 @import "tailwindcss";
+@import "highlight.js/styles/atom-one-dark.css";
 
 @custom-variant dark (&: where(.dark, .dark *));
 
@@ -68,9 +69,15 @@
   }
 }
 
-pre {
-  background-color: var(--color-ev-light-hard);
+/* pre {
   border-radius: var(--radius-md);
   padding: 16px;
   overflow-x: auto;
+} */
+
+pre {
+  padding: 16px;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  /* background-color: var(--color-ev-foreground-harder); */
 }

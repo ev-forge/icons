@@ -1,0 +1,29 @@
+---
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
+import html from "highlight.js/lib/languages/xml";
+
+// Registra los lenguajes que quieras usar
+hljs.registerLanguage("javascript", javascript);
+hljs.registerLanguage("html", html);
+
+// Recibe el código y el lenguaje como props
+const { code, language = "javascript" } = Astro.props;
+
+// Aplica resaltado
+const highlighted = hljs.highlight(code, { language }).value;
+---
+
+<!-- <style global>
+  /* Importa el tema de Highlight.js (puedes cambiarlo por otro) */
+  @import "highlight.js/styles/github-dark.css";
+
+  pre {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+</style> -->
+<pre>
+  <code class={`language-${language}`} set:html={highlighted} />
+</pre>

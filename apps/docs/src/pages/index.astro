@@ -18,6 +18,19 @@ import {
   EXAMPLES_ASTRO,
 } from "../constants";
 import Layout from "../layouts/Layout.astro";
+// import hljs from "highlight.js";
+import CodeBlock from "../components/CodeBlock.astro";
+
+// const jsExample = `
+// function saludar(nombre) {
+//   console.log('Hola ' + nombre + '!');
+// }
+// saludar('Astro');
+// `;
+
+// import("highlight.js/lib/core");
+
+// hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
 ---
 
 <Layout>
@@ -46,10 +59,12 @@ import Layout from "../layouts/Layout.astro";
               svg={svgRocketSolid}
               class="absolute text-5xl -rotate-45 bottom-0 right-0"></ev-icon>
           </div>
+
           <a
             href="#get-started"
             class="w-full max-w-3xs p-2 text-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
             >Get Started
+            <ev-icon svg={svgPersonWalkingSolid}></ev-icon>
           </a>
           <a
             href={LINKS["browser-icons"]}
@@ -66,41 +81,61 @@ import Layout from "../layouts/Layout.astro";
       <h2 class="text-2xl md:text-4xl">Getting Started</h2>
 
       <h3>With Vite/React</h3>
+      <p><span class="font-bold">Step 1:</span> Install the package</p>
       <!--  -->
+      <!-- <pre>
+        <code >
+          npm i @ev-forge/icons
+        </code>
+      </pre> -->
+      <!-- <CodeBlock code={jsExample} language="javascript" /> -->
+      <CodeBlock code={`npm i @ev-forge/icons`} language="javascript" />
       <p>
-        The modern web presents a frustrating choice for icons. Many libraries
-        bundle their entire set, bloating your app when you only need a few.
-        Others are small but have a limited selection, while massive collections
-        often lack design consistency. <span class="font-bold"
-          >@ev-forge/icons</span
-        > is designed to solve all three issues.
+        <span class="font-bold">Step 2:</span> Add ev-icon web component definition
+        into your project, you can include it into your tsconfig
       </p>
+      <CodeBlock
+        code={`
+        {
+          "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
+        }
+        `}
+        language="javascript"
+      />
+      <!-- 
+      
+      -->
+      <p>Or you can add it into a ev-forge/icons.d.ts file</p>
+      <!-- /// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" /> -->
       <p>
-        Our philosophy is to reverse this trend by focusing on three core
-        principles:
-        <ul class="list-inside list-decimal">
-          <li>
-            <span class="font-bold">Start with Excellence</span> We chose Font Awesome
-            as our foundation for one simple reason: its icons are a masterpiece
-            of design consistency. By starting here, we guarantee a professional
-            and cohesive look for your projects out of the box.
-          </li>
-          <li>
-            <span class="font-bold">Performance is Paramount</span> We believe the
-            best code is the code you don't ship. Our icon-level tree-shaking ensures
-            your application only bundles the icons you use, keeping it as small
-            and fast as possible.
-          </li>
-          <li>
-            <span class="font-bold"
-              >Embrace the Platform, Empower the Community</span
-            > By building on native Web Components, @ev-forge/icons works in any
-            framework. We extend this foundation by allowing the community to contribute
-            in a thoughtfully curated way, ensuring the icon set remains consistent
-            and valuable for everyone.
-          </li>
-        </ul>
+        <span class="font-bold">Step 3 (optional):</span> On server side rendering,
+        you need to register you the ev-icon web component, ex in NextJs, create
+        a client component
       </p>
+      <!-- 
+      "use client";  import { useEffect } from "react";
+      export const IconLibraryRegistry = () => { 
+         useEffect(() => { 
+        import("@ev-forge/icon-library"); 
+        }, []);
+        return null;
+      };
+      -->
+      <p>Other example in Astro, create client script</p>
+      <!-- 
+      <script>
+        import "@ev-forge/icon-library"; 
+      </script>
+       -->
+      <p><span class="font-bold">Step 4:</span> Import and use it</p>
+      <!--
+      import { svgHomeSolid } from "@ev-forge/icon-library"; 
+        const MyComponent = ()=>{
+          return <div>
+              <ev-icon svg={svgHomeSolid}/>
+          </div>
+        }
+      -->
     </section>
 
     <section
