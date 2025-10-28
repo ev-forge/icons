@@ -6,6 +6,7 @@ import {
   svgRocketSolid,
 } from "@ev-forge/icons";
 
+import { Link } from "@ev-forge/components";
 import {
   ADD_TYPES_EXAMPLE,
   LINKS,
@@ -33,30 +34,31 @@ import { CodeBlock } from "../components/CodeBlock";
           class="font-bold">perfect tree-shaking, agnostic JSX</span
         > and <span class="font-bold">community extensible</span>
 
-        <div class="pt-12 flex flex-col justify-center items-center gap-4">
+        <div class="mt-[50px] flex flex-col justify-center items-center gap-4">
           <div class="relative w-full max-w-3xs">
             <ev-icon
               svg={svgDogSolid}
-              class="absolute text-base bottom-0 right-24"></ev-icon>
+              class="absolute text-base bottom-full right-24"></ev-icon>
             <ev-icon
               svg={svgPersonWalkingSolid}
-              class="absolute text-2xl bottom-0 right-16"></ev-icon>
+              class="absolute text-2xl bottom-full right-16"></ev-icon>
             <ev-icon
               svg={svgRocketSolid}
-              class="absolute text-5xl -rotate-45 bottom-0 right-0"></ev-icon>
+              class="absolute text-5xl -rotate-45 bottom-[calc(100%-8px)] right-0"
+            ></ev-icon>
+            <Link
+              href="#get-started"
+              _variant="solid"
+              className="block text-center"
+              >Get Started
+            </Link>
           </div>
 
-          <a
-            href="#get-started"
-            class="w-full max-w-3xs p-2 text-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
-            >Get Started
-            <ev-icon svg={svgPersonWalkingSolid}></ev-icon>
-          </a>
-          <a
+          <Link
             href={LINKS["browser-icons"]}
-            class="w-full max-w-3xs p-2 flex items-center justify-center gap-2 border-2 border-ev-secondary rounded-md"
-            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon></a
-          >
+            className="py-[6px] px-[14px] flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
+            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon>
+          </Link>
         </div>
       </p>
     </section>
