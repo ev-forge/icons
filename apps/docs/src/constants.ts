@@ -2,15 +2,6 @@ export const INSTALL_EXAMPLE = `npm i @ev-forge/icons`
 export const ADD_TYPES_EXAMPLE = `{
     "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
 }`
-export const IMPORT_AND_USE_IT_EXAMPLE = `import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
-
-function MyApp() {
-  return (
-    <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
-    </div>
-  );
-}`
 
 export const CREATE_DTS_FILE = `// eslint-disable-next-line @typescript-eslint/triple-slash-reference
 /// <reference path="node_modules/@ev-forge/icons/dist/global.d.ts" />`
@@ -30,30 +21,12 @@ export const REGISTER_IN_ASTRO = `<script>
   import "@ev-forge/icons";
 </script>`
 
-export const EXAMPLES_ASTRO = `// ℹ️ example in react:
-import { svgHomeSolid } from "@ev-forge/icons";
-
-function MyApp() {
-  return (
-    <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
-    </div>
-  );
-}
-
-
-// ℹ️ example in astro Jsx:
----
-import { svgRocketSolid } from "@ev-forge/icons";
-
-import Layout from "../layouts/Layout.astro";
----
-
-<Layout>
-  <a href="/" class="p-2 flex items-center gap-2">
-  Get Started <ev-icon svg={svgRocketSolid}></ev-icon>
-  </a>
-</Layout>`
+export const EXAMPLE_REACT = `import { svgHomeSolid } from "@ev-forge/icon-library";
+const MyComponent = () => {
+  return <div>
+    <ev-icon svg={svgHomeSolid}/>
+  </div>
+}`
 
 export const LINKS = {
   "ev-forge": "https://github.com/ev-forge",

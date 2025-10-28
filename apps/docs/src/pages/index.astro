@@ -4,33 +4,19 @@ import {
   svgExternalLinkAltSolid,
   svgPersonWalkingSolid,
   svgRocketSolid,
-  svgSearchSolid,
 } from "@ev-forge/icons";
 
 import {
   ADD_TYPES_EXAMPLE,
   LINKS,
-  IMPORT_AND_USE_IT_EXAMPLE,
   INSTALL_EXAMPLE,
   CREATE_DTS_FILE,
   ICON_LIBRARY_REGISTER,
   REGISTER_IN_ASTRO,
-  EXAMPLES_ASTRO,
+  EXAMPLE_REACT,
 } from "../constants";
 import Layout from "../layouts/Layout.astro";
-// import hljs from "highlight.js";
-import CodeBlock from "../components/CodeBlock.astro";
-
-// const jsExample = `
-// function saludar(nombre) {
-//   console.log('Hola ' + nombre + '!');
-// }
-// saludar('Astro');
-// `;
-
-// import("highlight.js/lib/core");
-
-// hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+import { CodeBlock } from "../components/CodeBlock";
 ---
 
 <Layout>
@@ -75,166 +61,50 @@ import CodeBlock from "../components/CodeBlock.astro";
       </p>
     </section>
 
-    <section
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-    >
-      <h2 class="text-2xl md:text-4xl">Getting Started</h2>
+    <section class="w-full max-w-[800px] p-4">
+      <h2 class="heading-2">Getting Started</h2>
 
-      <h3>With Vite/React</h3>
-      <p><span class="font-bold">Step 1:</span> Install the package</p>
-      <!--  -->
-      <!-- <pre>
-        <code >
-          npm i @ev-forge/icons
-        </code>
-      </pre> -->
-      <!-- <CodeBlock code={jsExample} language="javascript" /> -->
-      <CodeBlock code={`npm i @ev-forge/icons`} language="javascript" />
-      <p>
-        <span class="font-bold">Step 2:</span> Add ev-icon web component definition
-        into your project, you can include it into your tsconfig
+      <p class="my-2">
+        <span class="font-bold">Step 1:</span> Install the package
+        <CodeBlock client:only="react" code={INSTALL_EXAMPLE} lang="bash" />
       </p>
-      <CodeBlock
-        code={`
-        {
-          "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
-        }
-        `}
-        language="javascript"
-      />
-      <!-- 
-      
-      -->
-      <p>Or you can add it into a ev-forge/icons.d.ts file</p>
-      <!-- /// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" /> -->
-      <p>
-        <span class="font-bold">Step 3 (optional):</span> On server side rendering,
-        you need to register you the ev-icon web component, ex in NextJs, create
-        a client component
-      </p>
-      <!-- 
-      "use client";  import { useEffect } from "react";
-      export const IconLibraryRegistry = () => { 
-         useEffect(() => { 
-        import("@ev-forge/icon-library"); 
-        }, []);
-        return null;
-      };
-      -->
-      <p>Other example in Astro, create client script</p>
-      <!-- 
-      <script>
-        import "@ev-forge/icon-library"; 
-      </script>
-       -->
-      <p><span class="font-bold">Step 4:</span> Import and use it</p>
-      <!--
-      import { svgHomeSolid } from "@ev-forge/icon-library"; 
-        const MyComponent = ()=>{
-          return <div>
-              <ev-icon svg={svgHomeSolid}/>
-          </div>
-        }
-      -->
-    </section>
-
-    <section
-      id="get-started"
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-    >
-      <h2 class="text-2xl md:text-4xl">Get Started</h2>
-
-      <div>
-        <h3 class="text-xl font-bold">In Vite/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 3: Import and use it</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In NextJs</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component, create a file ev-forge-icons.d.ts and
-            copy inside
-          </h4>
-          <pre><code>{CREATE_DTS_FILE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Next.js with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Create the file
-            `IconLibraryRegistry.tsx` and paste the following code:
-          </h4>
-          <pre><code class="language-jsx">{ICON_LIBRARY_REGISTER}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In Astro/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Astro with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Add the script into your Layout
-          </h4>
-          <pre><code class="language-jsx">{REGISTER_IN_ASTRO}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{EXAMPLES_ASTRO}</code></pre>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-center gap-4">
-        <p class="font-semibold text-center text-2xl">
-          Done! That's all it takes. For a full list of available icons, head
-          over to our Icon Browser.
-        </p>
-        <a
-          href={LINKS["browser-icons"]}
-          class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md"
-          >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
+      <p class="my-2">
+        <span class="font-bold">Step 2:</span> Add <code>ev-icon</code> web component
+        definition into your project, you can include it into your <code
+          >tsconfig.ts</code
         >
-      </div>
+        <CodeBlock client:only="react" code={ADD_TYPES_EXAMPLE} lang="json" />
+      </p>
+      <p class="my-2">
+        Or you can add it into a <code>ev-forge/icons.d.ts</code> file
+        <CodeBlock
+          client:only="react"
+          code={CREATE_DTS_FILE}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-2">
+        <span class="font-bold">Step 3 (optional):</span> On server side rendering,
+        you need to register you the <code>ev-icon</code> web component, ex in NextJs,
+        create a client component
+        <CodeBlock
+          client:only="react"
+          code={ICON_LIBRARY_REGISTER}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-2">
+        Other example in Astro, create client script
+        <CodeBlock
+          client:only="react"
+          code={REGISTER_IN_ASTRO}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-2">
+        <span class="font-bold">Step 4:</span> Import and use it
+        <CodeBlock client:only="react" code={EXAMPLE_REACT} lang="typescript" />
+      </p>
     </section>
   </main>
 </Layout>

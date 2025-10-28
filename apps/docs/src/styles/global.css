@@ -1,6 +1,6 @@
 @config "../../tailwind.config";
 @import "tailwindcss";
-@import "highlight.js/styles/atom-one-dark.css";
+@import "highlight.js/styles/tokyo-night-dark.min.css";
 
 @custom-variant dark (&: where(.dark, .dark *));
 
@@ -35,6 +35,7 @@
 }
 
 @layer theme {
+
   :root,
   :host {
     @variant dark {
@@ -69,15 +70,40 @@
   }
 }
 
-/* pre {
-  border-radius: var(--radius-md);
-  padding: 16px;
-  overflow-x: auto;
-} */
+@layer components {
+  .heading-1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  .heading-4 {
+    @apply text-xl font-medium;
+  }
+
+  .heading-5 {
+    @apply text-lg font-medium;
+  }
+
+  .heading-6 {
+    @apply text-base font-semibold uppercase tracking-wide;
+  }
+}
 
 pre {
-  padding: 16px;
   border-radius: 0.5rem;
   overflow-x: auto;
-  /* background-color: var(--color-ev-foreground-harder); */
+  padding: 12px;
+}
+
+code:not(pre code) {
+  background-color: var(--color-ev-background-harder);
+  padding: 0px 2px;
+  border-radius: 4px;
 }
