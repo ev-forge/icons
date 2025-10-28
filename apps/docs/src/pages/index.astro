@@ -12,34 +12,20 @@ import {
   svgPersonWalkingSolid,
   svgPersonWalkingWithCaneSolid,
   svgRocketSolid,
-  svgSearchSolid,
-  svgWheelchairMoveSolid,
 } from "@ev-forge/icons";
 
+import { Link } from "@ev-forge/components";
 import {
   ADD_TYPES_EXAMPLE,
   LINKS,
-  IMPORT_AND_USE_IT_EXAMPLE,
   INSTALL_EXAMPLE,
   CREATE_DTS_FILE,
   ICON_LIBRARY_REGISTER,
   REGISTER_IN_ASTRO,
-  EXAMPLES_ASTRO,
+  EXAMPLE_REACT,
 } from "../constants";
 import Layout from "../layouts/Layout.astro";
-// import hljs from "highlight.js";
-import CodeBlock from "../components/CodeBlock.astro";
-
-// const jsExample = `
-// function saludar(nombre) {
-//   console.log('Hola ' + nombre + '!');
-// }
-// saludar('Astro');
-// `;
-
-// import("highlight.js/lib/core");
-
-// hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+import { CodeBlock } from "../components/CodeBlock";
 ---
 
 <Layout>
@@ -56,178 +42,78 @@ import CodeBlock from "../components/CodeBlock.astro";
           class="font-bold">perfect tree-shaking, agnostic JSX</span
         > and <span class="font-bold">community extensible</span>
 
-        <div class="pt-12 flex flex-col justify-center items-center gap-4">
+        <div class="mt-[50px] flex flex-col justify-center items-center gap-4">
           <div class="relative w-full max-w-3xs">
             <ev-icon
               svg={svgDogSolid}
-              class="absolute text-base bottom-0 right-24"></ev-icon>
+              class="absolute text-base bottom-full right-24"></ev-icon>
             <ev-icon
               svg={svgPersonWalkingSolid}
-              class="absolute text-2xl bottom-0 right-16"></ev-icon>
+              class="absolute text-2xl bottom-full right-16"></ev-icon>
             <ev-icon
               svg={svgRocketSolid}
-              class="absolute text-5xl -rotate-45 bottom-0 right-0"></ev-icon>
+              class="absolute text-5xl -rotate-45 bottom-[calc(100%-8px)] right-0"
+            ></ev-icon>
+            <Link
+              href="#get-started"
+              _variant="solid"
+              className="block text-center"
+              >Get Started
+            </Link>
           </div>
 
-          <a
-            href="#get-started"
-            class="w-full max-w-3xs p-2 text-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
-            >Get Started
-            <ev-icon svg={svgPersonWalkingSolid}></ev-icon>
-          </a>
-          <a
+          <Link
             href={LINKS["browser-icons"]}
-            class="w-full max-w-3xs p-2 flex items-center justify-center gap-2 border-2 border-ev-secondary rounded-md"
-            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon></a
-          >
+            className="py-[6px] px-[14px] flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
+            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon>
+          </Link>
         </div>
       </p>
     </section>
 
-    <section
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-    >
-      <h2 class="text-2xl md:text-4xl">Getting Started</h2>
+    <section class="w-full max-w-[800px] p-4">
+      <h2 class="heading-2">Getting Started</h2>
 
-      <h3>With Vite/React</h3>
-      <p><span class="font-bold">Step 1:</span> Install the package</p>
-      <!--  -->
-      <!-- <pre>
-        <code >
-          npm i @ev-forge/icons
-        </code>
-      </pre> -->
-      <!-- <CodeBlock code={jsExample} language="javascript" /> -->
-      <CodeBlock code={`npm i @ev-forge/icons`} language="javascript" />
-      <p>
-        <span class="font-bold">Step 2:</span> Add ev-icon web component definition
-        into your project, you can include it into your tsconfig
+      <p class="my-2">
+        <span class="font-bold">Step 1:</span> Install the package
+        <CodeBlock client:only="react" code={INSTALL_EXAMPLE} lang="bash" />
       </p>
-      <CodeBlock
-        code={`
-        {
-          "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
-        }
-        `}
-        language="javascript"
-      />
-      <!-- 
-      
-      -->
-      <p>Or you can add it into a ev-forge/icons.d.ts file</p>
-      <!-- /// <reference path="node_modules/@ev-forge/icon-library/dist/global.d.ts" /> -->
-      <p>
+      <p class="my-2">
+        <span class="font-bold">Step 2:</span> Add <code>ev-icon</code> web component
+        definition into your project, you can include it into your <code
+          >tsconfig.ts</code
+        >
+        <CodeBlock client:only="react" code={ADD_TYPES_EXAMPLE} lang="json" />
+      </p>
+      <p class="my-2">
+        Or you can add it into a <code>ev-forge/icons.d.ts</code> file
+        <CodeBlock
+          client:only="react"
+          code={CREATE_DTS_FILE}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-2">
         <span class="font-bold">Step 3 (optional):</span> On server side rendering,
-        you need to register you the ev-icon web component, ex in NextJs, create
-        a client component
+        you need to register you the <code>ev-icon</code> web component, ex in NextJs,
+        create a client component
+        <CodeBlock
+          client:only="react"
+          code={ICON_LIBRARY_REGISTER}
+          lang="typescript"
+        />
       </p>
-      <!-- 
-      "use client";  import { useEffect } from "react";
-      export const IconLibraryRegistry = () => { 
-         useEffect(() => { 
-        import("@ev-forge/icon-library"); 
-        }, []);
-        return null;
-      };
-      -->
-      <p>Other example in Astro, create client script</p>
-      <!-- 
-      <script>
-        import "@ev-forge/icon-library"; 
-      </script>
-       -->
-      <p><span class="font-bold">Step 4:</span> Import and use it</p>
-      <!--
-      import { svgHomeSolid } from "@ev-forge/icon-library"; 
-        const MyComponent = ()=>{
-          return <div>
-              <ev-icon svg={svgHomeSolid}/>
-          </div>
-        }
-      -->
-    </section>
-
-    <section
-      class="w-full max-w-[800px] h-full min-h-dvh p-4 flex flex-col justify-center gap-9 bg-linear-[180deg,#3669B5_62%,#93AC75_40%] md:gap-16"
-    >
-      <h2
-        class="text-2xl text-center font-bold text-ev-destructive-contrast md:text-4xl"
-      >
-        The vision
-      </h2>
-      <p class="text-ev-destructive-contrast text-center">
-        Imagine a future where we have an vast of valuable high quality of
-        icons. Where the community define the standard of the icons with RFCs,
-        where designer craft every icon and the community take advantage of it.
+      <p class="my-2">
+        Other example in Astro, create client script
+        <CodeBlock
+          client:only="react"
+          code={REGISTER_IN_ASTRO}
+          lang="typescript"
+        />
       </p>
-      <div class="relative w-full max-w-[375px] h-48 mx-auto flex">
-        <ev-icon
-          svg={svgCloudSolid}
-          class="absolute text-ev-destructive-contrast text-3xl top-3 left-12"
-        ></ev-icon>
-        <ev-icon
-          svg={svgCloudSolid}
-          class="absolute text-ev-destructive-contrast text-3xl top-0 left-24"
-        ></ev-icon>
-        <ev-icon
-          svg={svgParachuteBoxSolid}
-          class="absolute text-[#FFC909] text-5xl translate-x-1/2 top-3 right-1/2"
-        ></ev-icon>
-        <ev-icon
-          svg={svgCloudSolid}
-          class="absolute text-ev-destructive-contrast text-3xl top-0 right-28"
-        ></ev-icon>
-        <ev-icon
-          svg={svgCloudSolid}
-          class="absolute text-ev-destructive-contrast text-3xl top-3 right-24"
-        ></ev-icon>
-        <ev-icon
-          svg={svgCloudSolid}
-          class="absolute text-ev-destructive-contrast text-3xl top-3 right-9"
-        ></ev-icon>
-
-        <ev-icon svg={svgDogSolid} class="absolute text-base bottom-11 left-9"
-        ></ev-icon>
-        <ev-icon
-          svg={svgPersonWalkingSolid}
-          class="absolute text-2xl bottom-12 left-14"></ev-icon>
-        <ev-icon
-          svg={svgWheelchairMoveSolid}
-          class="absolute text-2xl bottom-16 left-24"></ev-icon>
-        <ev-icon
-          svg={svgPersonDressSolid}
-          class="absolute text-2xl bottom-14 left-[132px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonSolid}
-          class="absolute text-2xl bottom-16 left-36"></ev-icon>
-        <ev-icon
-          svg={svgPersonSolid}
-          class="absolute text-2xl bottom-13 left-[150px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonWalkingWithCaneSolid}
-          class="absolute text-2xl bottom-11 left-[166px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonSolid}
-          class="absolute text-2xl translate-x-1/2 bottom-14 right-1/2"
-        ></ev-icon>
-        <ev-icon
-          svg={svgPersonSolid}
-          class="absolute text-2xl bottom-14 right-[151px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonDressSolid}
-          class="absolute text-2xl bottom-18 right-[142px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonSolid}
-          class="absolute text-2xl bottom-[68px] right-[121px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonDressSolid}
-          class="absolute text-2xl bottom-[70px] right-[108px]"></ev-icon>
-        <ev-icon
-          svg={svgPersonBikingSolid}
-          class="absolute text-2xl bottom-18 right-[37px]"></ev-icon>
-      </div>
-      <p class="text-center font-bold">
-        We are opening the door for a new era of creativity and collaboration
+      <p class="my-2">
+        <span class="font-bold">Step 4:</span> Import and use it
+        <CodeBlock client:only="react" code={EXAMPLE_REACT} lang="typescript" />
       </p>
     </section>
   </main>
