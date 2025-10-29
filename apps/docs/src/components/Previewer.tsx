@@ -5,7 +5,7 @@ import {
   svgSearchSolid,
 } from "@ev-forge/icons";
 import { metadata } from "@ev-forge/icons";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "../Box";
 import { useDebounce } from "../hooks/useDebounce";
 import { Button, Input } from "@ev-forge/components";
@@ -30,39 +30,43 @@ export const Previewer = () => {
     setFilteredMetadata(filterItems(queryDebounce, metadata));
   }, [queryDebounce, metadata]);
 
-  console.log({ filteredMetadata });
-
   return (
-    <main className="w-full h-full min-h-dvh flex flex-col items-center gap-10">
+    <main className="w-full h-full min-h-dvh flex flex-col items-center">
       <section
         className={`${
           query
             ? "h-[calc(40dvh-141px)] border-none pb-11"
             : "h-[40dvh] border-b-2 pb-0"
-        } w-full bg-ev-primary flex flex-col items-center justify-center gap-0 border-b-2`}
+        } w-full transition-[height] bg-ev-primary flex flex-col items-center justify-center gap-0 border-b-2`}
       >
-        <div className="relative w-full max-w-[375px] flex-1 px-4">
+        <div className={"relative w-full max-w-[375px] flex-1 px-4"}>
           <ev-icon
             svg={svgCloudSolid}
-            className={`absolute text-ev-destructive-contrast ${
-              query ? "text-[60px] bottom-[22px]" : "text-[80px] bottom-14"
-            }  left-9`}
+            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
+              query
+                ? "text-[60px] bottom-[22px] left-[150px]"
+                : "text-[80px] bottom-14 left-9"
+            }`}
           ></ev-icon>
           <ev-icon
             svg={svgCloudSolid}
-            className={`absolute text-ev-destructive-contrast ${
-              query ? "text-[32px] bottom-[41px]" : "text-[43px] bottom-[81px]"
-            } left-[147px]`}
+            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
+              query
+                ? "text-[32px] bottom-[41px] right-[120px]"
+                : "text-[43px] bottom-[81px] left-[147px]"
+            } `}
           ></ev-icon>
           <ev-icon
             svg={svgCloudSolid}
-            className={`absolute text-ev-destructive-contrast ${
-              query ? "text-[32px] bottom-[27px]" : "text-[43px] bottom-[61px]"
-            } right-[148px]`}
+            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
+              query
+                ? "text-[32px] bottom-[27px] right-[110px]"
+                : "text-[43px] bottom-[61px] right-[148px]"
+            }`}
           ></ev-icon>
           <ev-icon
             svg={svgCloudSolid}
-            className={`absolute text-ev-destructive-contrast ${
+            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
               query ? "text-[67px] bottom-[21px]" : "text-[91px] bottom-14"
             } right-9`}
           ></ev-icon>
@@ -136,7 +140,7 @@ export const Previewer = () => {
           <ev-icon svg={svgMotorcycleSolid} className="text-[17.4]"></ev-icon>
         </div>
       </section>
-      <section className="flex-1 w-full max-w-[800px] px-4 flex flex-col items-center justify-center gap-7">
+      <section className="flex-1 w-full max-w-[800px] p-4 flex flex-col items-center justify-center gap-7">
         <p className="text-center">
           Icons nomenclature: svg + name + type. Ex: svgHomeSolid
         </p>
