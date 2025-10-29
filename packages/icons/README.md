@@ -213,6 +213,6 @@ This is a community-driven project. We welcome contributions, especially new ori
 
 ## 📄 License
 
-The source code for `@ev-forge/icon` is released under the **MIT License**.
+The source code for `@ev-forge/icons` is released under the **MIT License**.
 
 The base icons are provided by **Font Awesome Free** and are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).

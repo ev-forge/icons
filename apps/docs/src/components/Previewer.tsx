@@ -23,7 +23,7 @@ export const Previewer = () => {
 
   return (
     <main className="flex flex-col items-center gap-10">
-      <section className="w-full max-w-[800px] min-h-[100dvh] p-4 flex flex-col justify-center gap-4 md:gap-10">
+      <section className="w-full max-w-[800px] min-h-dvh p-4 flex flex-col justify-center gap-4 md:gap-10">
         <h1 className="text-4xl text-center">What icon are you looking for?</h1>
         <div className="w-full">
           <div className="w-full grid grid-cols-[1fr_auto] bg-white text-ev-dark text-4xl rounded-4xl">

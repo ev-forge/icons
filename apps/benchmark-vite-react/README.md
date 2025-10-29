@@ -27,11 +27,11 @@ This measurement shows the total size of the library's modules included in the f
 
 These metrics reflect the perceived loading speed for the user on a simulated mobile device.
 
-| Metric                             | `@fortawesome/react-fontawesome` | **`@ev-forge/icon`** |
-| :--------------------------------- | :------------------------------: | :------------------: |
-| **First Contentful Paint (FCP)**   |              1.5 s               |      **1.4 s**       |
-| **Largest Contentful Paint (LCP)** |              1.8 s               |        1.8 s         |
-| **Total Blocking Time (TBT)**      |             **0 ms**             |        40 ms         |
+| Metric                             | `@fortawesome/react-fontawesome` | **`@ev-forge/icons`** |
+| :--------------------------------- | :------------------------------: | :-------------------: |
+| **First Contentful Paint (FCP)**   |              1.5 s               |       **1.4 s**       |
+| **Largest Contentful Paint (LCP)** |              1.8 s               |         1.8 s         |
+| **Total Blocking Time (TBT)**      |             **0 ms**             |         40 ms         |
 
 ![Lighthouse Comparison](public/lighthouse-results.png)
 
