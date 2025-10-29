@@ -27,7 +27,6 @@ export const CodeBlock = ({ lang, code }: CodeBlockProps) => {
 
   const onCopy = () => {
     try {
-      console.log("copu");
       setCopied(true);
       navigator.clipboard.writeText(code);
       setTimeout(() => setCopied(false), 4000);

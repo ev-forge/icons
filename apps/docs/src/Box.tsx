@@ -6,6 +6,14 @@ export const Box = ({ label, code }: BoxProps) => {
   const [svgContent, setSvgContent] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
+  const onCopy = async () => {
+    if (wasCopied) return;
+
+    await navigator.clipboard.writeText(code);
+    setWasCopied(true);
+    setTimeout(() => setWasCopied(false), 2000);
+  };
+
   useEffect(() => {
     try {
       setSvgContent(null);
@@ -27,15 +35,11 @@ export const Box = ({ label, code }: BoxProps) => {
 
   return (
     <button
-      onClick={async () => {
-        if (wasCopied) return;
-
-        await navigator.clipboard.writeText(code);
-        setWasCopied(true);
-        setTimeout(() => setWasCopied(false), 2000);
-      }}
-      className={`w-[180px] p-4 rounded-2xl aspect-square grid grid-rows-[2fr_1fr] place-items-center gap-2 ${
-        wasCopied ? "bg-ev-light-harder" : "bg-white hover:bg-ev-secondary"
+      onClick={onCopy}
+      className={`w-40 md:w-[180px] p-4 rounded-2xl aspect-square grid grid-rows-[2fr_1fr] place-items-center gap-2 ${
+        wasCopied
+          ? "bg-ev-light-harder"
+          : "bg-white hover:bg-ev-primary hover:text-ev-primary-contrast"
       }`}
     >
       {svgContent && <ev-icon svg={svgContent} className="w-16" />}

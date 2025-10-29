@@ -1,11 +1,12 @@
 ---
 import { svgGithubBrands } from "@ev-forge/icons";
-import { Header, Link } from "@ev-forge/components";
+import { Link } from "@ev-forge/components";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import { LINKS } from "../constants";
 
 const { title } = Astro.props;
+const url = Astro.url;
 ---
 
 <html lang="en">
@@ -20,18 +21,22 @@ const { title } = Astro.props;
     </script>
   </head>
   <body class="bg-ev-background text-ev-foreground">
-    <!-- <Header client:only="react"> -->
-
     <header
-      class="w-full max-w-[800px] mx-auto flex items-center justify-between"
+      class={`w-full ${url.pathname === "/browser" ? "bg-ev-primary text-ev-primary-contrast" : ""}`}
     >
-      <a href="http://">@ev-forge/icons</a>
-      <a href={LINKS["ev-forge-icons"]} class="">
-        <ev-icon svg={svgGithubBrands} class="text-2xl bg-ev-background"
-        ></ev-icon></a
+      <div
+        class="w-full max-w-[800px] mx-auto flex items-center justify-between"
       >
+        <Link
+          href="/"
+          _variant={`${url.pathname === "/browser" ? "solid" : "flat"}`}
+          >@ev-forge/icons</Link
+        >
+        <a href={LINKS["ev-forge-icons"]} class="">
+          <ev-icon svg={svgGithubBrands} class="text-2xl"></ev-icon></a
+        >
+      </div>
     </header>
-    <!-- </Header> -->
 
     <slot />
     <Footer />

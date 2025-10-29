@@ -10,10 +10,7 @@ import {
   svgZSolid,
 } from "@ev-forge/icons";
 
-// const icons = Object.entries(evIconLibrary);
-
 export const Previewer = () => {
-  // console.log({ icons });
   return (
     <main>
       <h1>@ev-forge/icons</h1>

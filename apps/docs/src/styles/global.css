@@ -15,10 +15,10 @@
   --color-ev-foreground-harder: #3d3d3d;
   --color-ev-foreground-contrast: #f8f1e5;
 
-  --color-ev-primary: #288195;
-  --color-ev-primary-hard: #247486;
-  --color-ev-primary-harder: #206777;
-  --color-ev-primary-hardest: #1c5a68;
+  --color-ev-primary: #3669b5;
+  --color-ev-primary-hard: #305ea2;
+  --color-ev-primary-harder: #2b5490;
+  --color-ev-primary-hardest: #25497e;
   --color-ev-primary-contrast: #ffffff;
 
   --color-ev-secondary: #d04a00;
@@ -35,9 +35,9 @@
 }
 
 @layer theme {
-
   :root,
-  :host {
+  :host,
+  * {
     @variant dark {
       --color-ev-background: #1c1c1c;
       --color-ev-background-hard: #3d3d3d;
@@ -49,10 +49,10 @@
       --color-ev-foreground-harder: #e0be91;
       --color-ev-foreground-contrast: #000000;
 
-      --color-ev-primary: #3d8d9f;
-      --color-ev-primary-hard: #529aaa;
-      --color-ev-primary-harder: #68a6b4;
-      --color-ev-primary-hardest: #7eb3bf;
+      --color-ev-primary: #4a78bc;
+      --color-ev-primary-hard: #5c85c2;
+      --color-ev-primary-harder: #6e93c9;
+      --color-ev-primary-hardest: #80a0d0;
       --color-ev-primary-contrast: #000000;
 
       --color-ev-secondary: #d45c19;
