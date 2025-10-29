@@ -36,16 +36,16 @@ export const CodeBlock = ({ lang, code }: CodeBlockProps) => {
   };
 
   return (
-    <div className="p-1 text-ev-primary-contrast bg-ev-primary rounded-md">
+    <div className="text-ev-primary-contrast bg-ev-primary rounded-md">
       <div className="px-2 mx-2 flex justify-between items-center  ">
         <div className="capitalize">{lang}</div>
         <IconButton onClick={onCopy} aria-label="Copy" _size="sm">
           <ev-icon svg={copied ? svgCheckCircleSolid : svgCopySolid} />
         </IconButton>
       </div>
-      <pre>
+      <pre className="rounded-b-md">
         <code
-          className={`hljs language-${lang}`}
+          className={`hljs language-${lang} rounded-b-md`}
           dangerouslySetInnerHTML={{ __html: highlighted }}
         />
       </pre>

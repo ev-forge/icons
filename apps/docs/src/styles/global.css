@@ -35,6 +35,7 @@
 }
 
 @layer theme {
+
   :root,
   :host,
   * {
@@ -94,12 +95,6 @@
   .heading-6 {
     @apply text-base font-semibold uppercase tracking-wide;
   }
-}
-
-pre {
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  padding: 12px;
 }
 
 code:not(pre code) {

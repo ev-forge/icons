@@ -1,32 +1,36 @@
 import {
   svgCloudSolid,
   svgMotorcycleSolid,
-  svgPersonSolid,
   svgPersonWalkingSolid,
   svgSearchSolid,
 } from "@ev-forge/icons";
 import { metadata } from "@ev-forge/icons";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Box } from "../Box";
 import { useDebounce } from "../hooks/useDebounce";
 import { Button, Input } from "@ev-forge/components";
 
 type MetadataItem = { name: string; code: string };
 const filterItems = (query: string, items: MetadataItem[]): MetadataItem[] => {
+  console.log({ query, items });
   if (!query) return [];
-  return items
+  const rr = items
     .filter((c) => c.name.toLocaleLowerCase().includes(query.toLowerCase()))
     .slice(0, 20);
+  console.log({ rr });
+  return rr;
 };
 
 export const Previewer = () => {
   const [query, setQuery] = useState("");
   const queryDebounce = useDebounce(query, 500);
+  const [filteredMetadata, setFilteredMetadata] = useState<MetadataItem[]>([]);
 
-  const filteredMetadata = useMemo(
-    () => filterItems(queryDebounce, metadata),
-    [queryDebounce, metadata]
-  );
+  useEffect(() => {
+    setFilteredMetadata(filterItems(queryDebounce, metadata));
+  }, [queryDebounce, metadata]);
+
+  console.log({ filteredMetadata });
 
   return (
     <main className="w-full h-full min-h-dvh flex flex-col items-center gap-10">
@@ -134,7 +138,7 @@ export const Previewer = () => {
       </section>
       <section className="flex-1 w-full max-w-[800px] px-4 flex flex-col items-center justify-center gap-7">
         <p className="text-center">
-          Icons has the next nomenclature: svg + name + type, ex: svgHomeSolid
+          Icons nomenclature: svg + name + type. Ex: svgHomeSolid
         </p>
         {queryDebounce && filteredMetadata.length === 0 && (
           <div>Can not find icons with that name, try with with other</div>
@@ -154,7 +158,6 @@ export const Previewer = () => {
             </div>
           </>
         )}
-        {/*  */}
         {!queryDebounce && (
           <>
             <h2 className="text-3xl text-center font-bold">
@@ -164,11 +167,19 @@ export const Previewer = () => {
               </span>{" "}
               ready to use
             </h2>
+
             <div className="flex flex-wrap justify-center gap-4">
-              {metadata.map((c) => (
+              {filteredMetadata.map((c) => (
                 <Box key={c.name} label={c.name} code={c.code} />
               ))}
             </div>
+
+            {/* 🚨 TODO: add infinity scroll */}
+            {filteredMetadata.length === 0 && (
+              <Button onClick={() => setFilteredMetadata(metadata)}>
+                Load All
+              </Button>
+            )}
           </>
         )}
       </section>

@@ -32,7 +32,11 @@ const url = Astro.url;
           _variant={`${url.pathname === "/browser" ? "solid" : "flat"}`}
           >@ev-forge/icons</Link
         >
-        <a href={LINKS["ev-forge-icons"]} class="">
+        <a
+          href={LINKS["ev-forge-icons"]}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <ev-icon svg={svgGithubBrands} class="text-2xl"></ev-icon></a
         >
       </div>

@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
 
+const toCamelCase = (str: string) =>
+  str
+    .replace(/-./g, (match) => match.charAt(1).toUpperCase())
+    .replace(/^./, (match) => match.toLowerCase());
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
+
 type BoxProps = { label: string; code: string };
 export const Box = ({ label, code }: BoxProps) => {
   const [wasCopied, setWasCopied] = useState(false);
@@ -38,7 +45,7 @@ export const Box = ({ label, code }: BoxProps) => {
       onClick={onCopy}
       className={`w-40 md:w-[180px] p-4 rounded-2xl aspect-square grid grid-rows-[2fr_1fr] place-items-center gap-2 ${
         wasCopied
-          ? "bg-ev-light-harder"
+          ? "bg-ev-primary-harder text-ev-primary-contrast"
           : "bg-white hover:bg-ev-primary hover:text-ev-primary-contrast"
       }`}
     >
@@ -46,7 +53,11 @@ export const Box = ({ label, code }: BoxProps) => {
       {wasCopied && (
         <p className="w-full text-center font-bold">Prop Copied!</p>
       )}
-      {!wasCopied && <p className="w-full text-center">{label}</p>}
+      {!wasCopied && (
+        <div className="w-full flex flex-col">
+          <div className="text-sm">{label}</div>
+        </div>
+      )}
     </button>
   );
 };

@@ -73,18 +73,18 @@ import { CodeBlock } from "../components/CodeBlock";
     <section class="w-full max-w-[800px] p-4">
       <h2 class="heading-2 text-ev-primary text-center">Getting Started</h2>
 
-      <p class="my-2">
+      <p class="my-4">
         <span class="font-bold">Step 1:</span> Install the package
         <CodeBlock client:only="react" code={INSTALL_EXAMPLE} lang="bash" />
       </p>
-      <p class="my-2">
+      <p class="my-4">
         <span class="font-bold">Step 2:</span> Add <code>ev-icon</code> web component
         definition into your project, you can include it into your <code
           >tsconfig.ts</code
         >
         <CodeBlock client:only="react" code={ADD_TYPES_EXAMPLE} lang="json" />
       </p>
-      <p class="my-2">
+      <p class="my-4">
         Or you can add it into a <code>ev-forge/icons.d.ts</code> file
         <CodeBlock
           client:only="react"
@@ -92,7 +92,7 @@ import { CodeBlock } from "../components/CodeBlock";
           lang="typescript"
         />
       </p>
-      <p class="my-2">
+      <p class="my-4">
         <span class="font-bold">Step 3 (optional):</span> On server side rendering,
         you need to register you the <code>ev-icon</code> web component, ex in NextJs,
         create a client component
@@ -102,7 +102,7 @@ import { CodeBlock } from "../components/CodeBlock";
           lang="typescript"
         />
       </p>
-      <p class="my-2">
+      <p class="my-4">
         Other example in Astro, create client script
         <CodeBlock
           client:only="react"
@@ -110,7 +110,7 @@ import { CodeBlock } from "../components/CodeBlock";
           lang="typescript"
         />
       </p>
-      <p class="my-2">
+      <p class="my-4">
         <span class="font-bold">Step 4:</span> Import and use it
         <CodeBlock client:only="react" code={EXAMPLE_REACT} lang="typescript" />
       </p>
