@@ -1,7 +1,7 @@
 # Icons Monorepo
 
 [![NPM Version](https://img.shields.io/npm/v/@ev-forge/icons)](https://www.npmjs.com/package/@ev-forge/icons)
-[![CI Status](https://github.com/tu-usuario/@ev-forge/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/tu-usuario/@ev-forge/icons/actions/workflows/ci.yml)
+[![CI Status](https://github.com/ev-forge/icons/actions/workflows/ci.yml/badge.svg)](https://github.com/ev-forge/icons/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.
@@ -23,8 +23,8 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 **Benchmark Results:**
 | Library | Bundle Impact (gzip) |
 | :--- | :--- |
-| **`@fortawesome/react-fontawesome`** | `~144 KB` |
-| **`@ev-forge/icons`** | `~26 KB` |
+| **`@fortawesome libs in react`** | `~144 KB` |
+| **`@ev-forge/icons`** | `~34 KB` |
 
 _For a detailed analysis and to reproduce these results, please see the [benchmark package's README](./apps/benchmark-vite-react/README.md)._
 

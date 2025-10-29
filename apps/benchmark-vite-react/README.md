@@ -16,10 +16,10 @@ The following results were collected on [Date, e.g., October 2025] using Chrome 
 
 This measurement shows the total size of the library's modules included in the final production bundle after tree-shaking.
 
-| Library                          | Bundle Size (gzip) | Reduction |
-| :------------------------------- | :----------------: | :-------: |
-| `@fortawesome/react-fontawesome` |      ~184 KB       |     -     |
-| **`@ev-forge/icons`**            |     **~27 KB**     | **~85%**  |
+| Library                      | Bundle Size (gzip) |  Reduction  |
+| :--------------------------- | :----------------: | :---------: |
+| `@fortawesome libs in react` |     ~144.75 KB     |      -      |
+| **`@ev-forge/icons`**        |   **~34.36 KB**    | **~74.88%** |
 
 ![Bundle Size Comparison](public/bundle-results.png)
 
@@ -27,11 +27,11 @@ This measurement shows the total size of the library's modules included in the f
 
 These metrics reflect the perceived loading speed for the user on a simulated mobile device.
 
-| Metric                             | `@fortawesome/react-fontawesome` | **`@ev-forge/icon`** |
-| :--------------------------------- | :------------------------------: | :------------------: |
-| **First Contentful Paint (FCP)**   |              1.5 s               |      **1.4 s**       |
-| **Largest Contentful Paint (LCP)** |              1.8 s               |        1.8 s         |
-| **Total Blocking Time (TBT)**      |             **0 ms**             |        40 ms         |
+| Metric                             | `@fortawesome libs in react` | **`@ev-forge/icons`** |
+| :--------------------------------- | :--------------------------: | :-------------------: |
+| **First Contentful Paint (FCP)**   |            1.5 s             |       **1.4 s**       |
+| **Largest Contentful Paint (LCP)** |            1.8 s             |         1.8 s         |
+| **Total Blocking Time (TBT)**      |           **0 ms**           |         60 ms         |
 
 ![Lighthouse Comparison](public/lighthouse-results.png)
 
@@ -49,7 +49,7 @@ pnpm --filter benchmark-vite-react build
 
 ### 2. Analyze the Bundle
 
-Open the generated `dist/stats.html` file in your browser to visually inspect the size of each library in the final bundle.
+Open the generated `dist/stats.html` file in your browser to visually, then exclude other libraries, ex: `*/**/scheduler/**, */**/react/**, */**/react-router/**, */**/react-dom/**,`. Now you can inspect the size of each library in the final bundle.
 
 ### 3. Analyze Load Performance
 
