@@ -1,219 +1,223 @@
 ---
 import {
-  svgBoxArchiveSolid,
-  svgPaletteSolid,
+  svgCloudSolid,
+  svgDogSolid,
+  svgExternalLinkAltSolid,
+  svgParachuteBoxSolid,
+  svgPersonBikingSolid,
+  svgPersonDressSolid,
+  svgPersonSolid,
   svgPersonWalkingSolid,
-  svgPuzzlePieceSolid,
+  svgPersonWalkingWithCaneSolid,
   svgRocketSolid,
-  svgSearchSolid,
-  svgStarSolid,
+  svgWheelchairMoveSolid,
 } from "@ev-forge/icons";
 
+import { Link } from "@ev-forge/components";
 import {
   ADD_TYPES_EXAMPLE,
   LINKS,
-  IMPORT_AND_USE_IT_EXAMPLE,
   INSTALL_EXAMPLE,
   CREATE_DTS_FILE,
   ICON_LIBRARY_REGISTER,
   REGISTER_IN_ASTRO,
-  EXAMPLES_ASTRO,
+  EXAMPLE_REACT,
 } from "../constants";
 import Layout from "../layouts/Layout.astro";
+import { CodeBlock } from "../components/CodeBlock";
 ---
 
 <Layout>
   <main class="flex flex-col items-center gap-10">
     <section
-      class="w-full max-w-[800px] min-h-[100dvh] p-4 flex flex-col justify-center gap-4 md:gap-10"
+      class="w-full max-w-[800px] min-h-dvh p-4 flex flex-col items-center justify-center gap-4 md:gap-10"
     >
-      <h1 class="text-4xl md:text-6xl">
-        One Icon Library for Every Framework, Bundling Only What You Use
+      <h1 class="text-4xl text-center text-ev-primary md:text-6xl">
+        The Last Icon Library You’ll Ever Need
       </h1>
-      <p class="text:lg md:text-2xl">
-        <span class="font-bold">@ev-forge/icons</span> is a framework-agnostic JS
-        tool that delivers Font Awesome's high-quality icons, powered by icon-level
-        tree-shaking for the smallest possible bundle size. If this helps you, please
-        gift us a <a
-          href={LINKS["ev-forge-icons"]}
-          class="border-b border-dashed border-ev-dark"
-          >star on GitHub! <ev-icon svg={svgStarSolid} class="text-yellow-500"
-          ></ev-icon></a
-        >
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgPersonWalkingSolid}></ev-icon>
-              <ev-icon svg={svgBoxArchiveSolid}></ev-icon> Tiny Bundle
-            </h3>
-            <p>Only the icons you import are included in your build.</p>
+      <p class="text-center text:lg md:text-2xl">
+        <span class="font-bold">@ev-forge/icons</span> is an open-source engine that unleashes
+        the full power of Font Awesome's massive library with a modern: <span
+          class="font-bold">perfect tree-shaking, agnostic JSX</span
+        > and <span class="font-bold">community extensible</span>
+
+        <div class="mt-[50px] flex flex-col justify-center items-center gap-4">
+          <div class="relative w-full max-w-3xs">
+            <ev-icon
+              svg={svgDogSolid}
+              class="absolute text-base bottom-full right-24"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingSolid}
+              class="absolute text-2xl bottom-full right-16"></ev-icon>
+            <ev-icon
+              svg={svgRocketSolid}
+              class="absolute text-5xl -rotate-45 bottom-[calc(100%-8px)] right-0"
+            ></ev-icon>
+            <Link
+              href="#get-started"
+              _variant="solid"
+              className="block text-center"
+              >Get Started
+            </Link>
           </div>
 
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgPuzzlePieceSolid}></ev-icon> For Any JSX
-            </h3>
-            <p>Use it in React, Svelte, Vue, or any JSX-based environment.</p>
-          </div>
-
-          <div class="bg-ev-light-hard rounded-lg p-2 md:p4">
-            <h3 class="font-semibold">
-              <ev-icon svg={svgPaletteSolid}></ev-icon> Simple Styling
-            </h3>
-            <p>Style icons with your favorite utility classes</p>
-          </div>
-        </div>
-        <div class="flex justify-center items-center gap-4">
-          <a
-            href="#get-started"
-            class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md scroll-smooth"
-            >Get Started <ev-icon svg={svgRocketSolid}></ev-icon></a
-          >
-          <a
+          <Link
             href={LINKS["browser-icons"]}
-            class="p-2 flex items-center gap-2 border-2 border-ev-secondary rounded-md"
-            >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
-          >
+            className="py-1.5 px-3.5 flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
+            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon>
+          </Link>
         </div>
       </p>
     </section>
 
-    <section
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-    >
-      <h2 class="text-2xl md:text-4xl">Performance Meets Design Consistency</h2>
-      <p>
-        The modern web presents a frustrating choice for icons. Many libraries
-        bundle their entire set, bloating your app when you only need a few.
-        Others are small but have a limited selection, while massive collections
-        often lack design consistency. <span class="font-bold"
-          >@ev-forge/icons</span
-        > is designed to solve all three issues.
+    <section class="w-full max-w-[800px] p-4">
+      <h2 class="heading-2 text-ev-primary text-center">Getting Started</h2>
+
+      <p class="my-4">
+        <span class="font-bold">Step 1:</span> Install the package
+        <CodeBlock client:only="react" code={INSTALL_EXAMPLE} lang="bash" />
       </p>
-      <p>
-        Our philosophy is to reverse this trend by focusing on three core
-        principles:
-        <ul class="list-inside list-decimal">
-          <li>
-            <span class="font-bold">Start with Excellence</span> We chose Font Awesome
-            as our foundation for one simple reason: its icons are a masterpiece
-            of design consistency. By starting here, we guarantee a professional
-            and cohesive look for your projects out of the box.
-          </li>
-          <li>
-            <span class="font-bold">Performance is Paramount</span> We believe the
-            best code is the code you don't ship. Our icon-level tree-shaking ensures
-            your application only bundles the icons you use, keeping it as small
-            and fast as possible.
-          </li>
-          <li>
-            <span class="font-bold"
-              >Embrace the Platform, Empower the Community</span
-            > By building on native Web Components, @ev-forge/icons works in any
-            framework. We extend this foundation by allowing the community to contribute
-            in a thoughtfully curated way, ensuring the icon set remains consistent
-            and valuable for everyone.
-          </li>
-        </ul>
-      </p>
-    </section>
-
-    <section
-      id="get-started"
-      class="w-full max-w-[800px] p-4 flex flex-col justify-center gap-4 md:gap-10"
-    >
-      <h2 class="text-2xl md:text-4xl">Get Started</h2>
-
-      <div>
-        <h3 class="text-xl font-bold">In Vite/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 3: Import and use it</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In NextJs</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component, create a file ev-forge-icons.d.ts and
-            copy inside
-          </h4>
-          <pre><code>{CREATE_DTS_FILE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Next.js with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Create the file
-            `IconLibraryRegistry.tsx` and paste the following code:
-          </h4>
-          <pre><code class="language-jsx">{ICON_LIBRARY_REGISTER}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{IMPORT_AND_USE_IT_EXAMPLE}</code></pre>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="text-xl font-bold">In Astro/React</h3>
-        <div>
-          <h4 class="text-lg">Step 1: Install</h4>
-          <pre><code class="bash">{INSTALL_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 2: add the web component types into your tsconfig.ts
-          </h4>
-          <pre><code>{ADD_TYPES_EXAMPLE}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">
-            Step 3: (Optional) For Astro with Server-Side Rendering (SSR): To
-            ensure icons render correctly, you must register the component
-            library on the client-side. Add the script into your Layout
-          </h4>
-          <pre><code class="language-jsx">{REGISTER_IN_ASTRO}</code></pre>
-        </div>
-
-        <div>
-          <h4 class="text-lg">Step 4: Import and Use</h4>
-          <pre><code class="language-jsx">{EXAMPLES_ASTRO}</code></pre>
-        </div>
-      </div>
-
-      <div class="flex flex-col items-center gap-4">
-        <p class="font-semibold text-center text-2xl">
-          Done! That's all it takes. For a full list of available icons, head
-          over to our Icon Browser.
-        </p>
-        <a
-          href={LINKS["browser-icons"]}
-          class="p-2 flex items-center gap-2 bg-ev-secondary rounded-md"
-          >Browse Icons<ev-icon svg={svgSearchSolid}></ev-icon></a
+      <p class="my-4">
+        <span class="font-bold">Step 2:</span> Add <code>ev-icon</code> web component
+        definition into your project, you can include it into your <code
+          >tsconfig.ts</code
         >
+        <CodeBlock client:only="react" code={ADD_TYPES_EXAMPLE} lang="json" />
+      </p>
+      <p class="my-4">
+        Or you can add it into a <code>ev-forge/icons.d.ts</code> file
+        <CodeBlock
+          client:only="react"
+          code={CREATE_DTS_FILE}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-4">
+        <span class="font-bold">Step 3 (optional):</span> On server side rendering,
+        you need to register you the <code>ev-icon</code> web component, ex in NextJs,
+        create a client component
+        <CodeBlock
+          client:only="react"
+          code={ICON_LIBRARY_REGISTER}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-4">
+        Other example in Astro, create client script
+        <CodeBlock
+          client:only="react"
+          code={REGISTER_IN_ASTRO}
+          lang="typescript"
+        />
+      </p>
+      <p class="my-4">
+        <span class="font-bold">Step 4:</span> Import and use it
+        <CodeBlock client:only="react" code={EXAMPLE_REACT} lang="typescript" />
+      </p>
+    </section>
+    <section class="w-full h-dvh">
+      <div class="w-full h-3/5 bg-ev-primary">
+        <div
+          class="w-full max-w-[800px] h-full mx-auto flex flex-col items-center justify-between"
+        >
+          <div
+            class="w-full flex-1 px-4 flex flex-col items-center justify-center"
+          >
+            <h2
+              class="text-2xl text-center font-bold text-ev-destructive-contrast py-8 md:text-4xl"
+            >
+              The vision
+            </h2>
+            <p class="text-ev-destructive-contrast text-center">
+              Imagine a future where we have an vast of valuable high quality of
+              icons. Where the community define the standard of the icons with
+              RFCs, where designer craft every icon and the community take
+              advantage of it.
+            </p>
+          </div>
+          <div class="relative w-full max-w-[343px] h-[140px]">
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] left-12"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[118px] left-24"
+            ></ev-icon>
+            <ev-icon
+              svg={svgParachuteBoxSolid}
+              class="absolute text-[#FFC909] text-5xl translate-x-1/2 bottom-[72px] right-1/2"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[119px] right-28"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-24"
+            ></ev-icon>
+            <ev-icon
+              svg={svgCloudSolid}
+              class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-9"
+            ></ev-icon>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-2/5 bg-[#93AC75]">
+        <div
+          class="w-full max-w-[800px] h-full mx-auto flex flex-col items-center justify-between"
+        >
+          <div class="relative w-full max-w-[343px] h-12">
+            <ev-icon
+              svg={svgDogSolid}
+              class="absolute text-base bottom-1 left-[29px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingSolid}
+              class="absolute text-2xl bottom-2 left-[49px]"></ev-icon>
+            <ev-icon
+              svg={svgWheelchairMoveSolid}
+              class="absolute text-2xl bottom-11 left-[77px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[26px] left-[119px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-6 left-32"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-[42px] left-[137px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonWalkingWithCaneSolid}
+              class="absolute text-2xl bottom-0 right-[108px] rotate-x-370 rotate-y-200"
+            ></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl translate-x-1/2 bottom-4 right-1/2"
+            ></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-[26px] right-[151px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[42px] right-[142px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonSolid}
+              class="absolute text-2xl bottom-7 right-[121px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonDressSolid}
+              class="absolute text-2xl bottom-[30px] right-[108px]"></ev-icon>
+            <ev-icon
+              svg={svgPersonBikingSolid}
+              class="absolute text-2xl bottom-[42px] right-[29px] rotate-x-360 rotate-y-220"
+            ></ev-icon>
+          </div>
+          <p
+            class="flex-1 text-center px-4 flex items-center justify-center-center font-bold h-12"
+          >
+            We are opening the door for a new era of creativity and
+            collaboration
+          </p>
+        </div>
       </div>
     </section>
   </main>

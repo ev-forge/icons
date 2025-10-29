@@ -3,39 +3,37 @@ import { LINKS } from "../constants";
 ---
 
 <footer
-  class="w-full p-2 flex flex-col items-center gap-2 bg-ev-dark-hard text-white"
+  class="w-full p-2 flex flex-col items-center gap-2 bg-ev-foreground text-neutral-400"
 >
   <div class="text-center">
-    Forged by <a
-      href={LINKS["ev-forge"]}
-      class="text-ev-light-hard"
-      target="_blank"
-      rel="noopener noreferrer">ev-forge</a
-    > with ❤️ from Perú 🇵🇪
-  </div>
+    <div class="text-center">
+      Copyright © 2025-present <a
+        href={LINKS["ev"]}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-blue-400">elVengador</a
+      >
+      & GG Forge Contributors. With ❤️ from 🇵🇪
+    </div>
 
-  <div class="text-center">
-    Released under the <a
-      href={LINKS["ev-forge-icons-license"]}
-      class="text-ev-light-hard"
-      target="_blank"
-      rel="noopener noreferrer">MIT License</a
-    >.<br />
-    Copyright © 2025-present <a
-      href={LINKS["ev"]}
-      class="text-ev-light-hard"
-      target="_blank"
-      rel="noopener noreferrer">elVengador</a
-    >
-    & GG Forge Contributors.
-  </div>
+    <hr class="my-2" />
 
-  <div class="text-center">
-    Base icons by <a
-      href={LINKS["fa"]}
-      class="text-ev-light-hard"
-      target="_blank"
-      rel="noopener noreferrer">Font Awesome</a
-    > (CC BY 4.0).
+    <div class="text-sm">
+      Released under the <a
+        href={LINKS["ev-forge-icons-license"]}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline hover:text-blue-400">MIT License</a
+      >
+    </div>
+
+    <div class="text-center text-sm">
+      Base icons by <a
+        href={LINKS["fa"]}
+        class="text-ev-light-hard"
+        target="_blank"
+        rel="noopener noreferrer">Font Awesome</a
+      > (CC BY 4.0).
+    </div>
   </div>
 </footer>

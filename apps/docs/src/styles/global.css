@@ -1,24 +1,104 @@
+@config "../../tailwind.config";
 @import "tailwindcss";
+@import "highlight.js/styles/tokyo-night-dark.min.css";
+
+@custom-variant dark (&: where(.dark, .dark *));
 
 @theme {
+  --color-ev-background: #f8f1e5;
+  --color-ev-background-hard: #ecd9bc;
+  --color-ev-background-harder: #e0be91;
+  --color-ev-background-contrast: #000000;
 
-    --color-ev-primary: #84C3F5;
-    --color-ev-primary-hard: #68B4F3;
-    --color-ev-primary-harder: #3E9FEF;
-    --color-ev-secondary: #F7BA4F;
-    --color-ev-secondary-hard: #F6B037;
-    --color-ev-secondary-harder: #F49E0B;
-    --color-ev-dark: #3E434D;
-    --color-ev-dark-hard: #202228;
-    --color-ev-dark-harder: #202228;
-    --color-ev-light: #E3F3FF;
-    --color-ev-light-hard: #B8E0FF;
-    --color-ev-light-harder: #8ACCFF;
+  --color-ev-foreground: #1c1c1c;
+  --color-ev-foreground-hard: #3d3d3d;
+  --color-ev-foreground-harder: #3d3d3d;
+  --color-ev-foreground-contrast: #f8f1e5;
+
+  --color-ev-primary: #3669b5;
+  --color-ev-primary-hard: #305ea2;
+  --color-ev-primary-harder: #2b5490;
+  --color-ev-primary-hardest: #25497e;
+  --color-ev-primary-contrast: #ffffff;
+
+  --color-ev-secondary: #d04a00;
+  --color-ev-secondary-hard: #bb4200;
+  --color-ev-secondary-harder: #a63b00;
+  --color-ev-secondary-hardest: #952b2b;
+  --color-ev-secondary-contrast: #ffffff;
+
+  --color-ev-destructive: #d63e3e;
+  --color-ev-destructive-hard: #c03737;
+  --color-ev-destructive-harder: #ab3131;
+  --color-ev-destructive-hardest: #952b2b;
+  --color-ev-destructive-contrast: #ffffff;
 }
 
-pre {
-    background-color: var(--color-ev-light-hard);
-    border-radius: var(--radius-md);
-    padding: 16px;
-    overflow-x: auto;
+@layer theme {
+
+  :root,
+  :host,
+  * {
+    @variant dark {
+      --color-ev-background: #1c1c1c;
+      --color-ev-background-hard: #3d3d3d;
+      --color-ev-background-harder: #3d3d3d;
+      --color-ev-background-contrast: #f8f1e5;
+
+      --color-ev-foreground: #f8f1e5;
+      --color-ev-foreground-hard: #ecd9bc;
+      --color-ev-foreground-harder: #e0be91;
+      --color-ev-foreground-contrast: #000000;
+
+      --color-ev-primary: #4a78bc;
+      --color-ev-primary-hard: #5c85c2;
+      --color-ev-primary-harder: #6e93c9;
+      --color-ev-primary-hardest: #80a0d0;
+      --color-ev-primary-contrast: #000000;
+
+      --color-ev-secondary: #d45c19;
+      --color-ev-secondary-hard: #d96e32;
+      --color-ev-secondary-harder: #de804c;
+      --color-ev-secondary-hardest: #e29266;
+      --color-ev-secondary-contrast: #000000;
+
+      --color-ev-destructive: #da5151;
+      --color-ev-destructive-hard: #de6464;
+      --color-ev-destructive-harder: #e27777;
+      --color-ev-destructive-hardest: #e68b8b;
+      --color-ev-destructive-contrast: #000000;
+    }
+  }
+}
+
+@layer components {
+  .heading-1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+
+  .heading-4 {
+    @apply text-xl font-medium;
+  }
+
+  .heading-5 {
+    @apply text-lg font-medium;
+  }
+
+  .heading-6 {
+    @apply text-base font-semibold uppercase tracking-wide;
+  }
+}
+
+code:not(pre code) {
+  background-color: var(--color-ev-background-harder);
+  padding: 0px 2px;
+  border-radius: 4px;
 }
