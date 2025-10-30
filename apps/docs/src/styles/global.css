@@ -37,8 +37,7 @@
 @layer theme {
 
   :root,
-  :host,
-  * {
+  :host {
     @variant dark {
       --color-ev-background: #1c1c1c;
       --color-ev-background-hard: #3d3d3d;
