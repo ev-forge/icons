@@ -1,5 +1,3 @@
-const parser = new DOMParser();
-
 export const defineMyIcon = () => {
     // ℹ️ to run only on client
     if (typeof window === 'undefined') return
@@ -71,6 +69,7 @@ export const defineMyIcon = () => {
             if (!shadow) return;
 
             // ℹ️ DOMParser generally is more efficient than create template
+            const parser = new DOMParser();
             const doc = parser.parseFromString(svgRaw, 'image/svg+xml');
             const newSvgElement = doc.documentElement as unknown as SVGSVGElement | null;
 
