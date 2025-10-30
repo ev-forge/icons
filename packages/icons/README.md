@@ -16,7 +16,7 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 
 1.  **Performance First:** The library uses an architecture that allows for perfect, icon-level tree-shaking. Your final bundle will only include the icons you explicitly import, resulting in the smallest possible footprint.
 2.  **Framework Agnostic:** Built with native Web Components, `@ev-forge/icons` works seamlessly in any environment—React, Svelte, Vue, Astro, or simple HTML—without wrappers or overhead.
-3.  **Simplicity:** The API is designed to be minimal and intuitive. Style icons with your favorite utility classes.
+3.  **Extensible by the community:** Propose new icons to create the most complete icon library with high quality.
 
 ## 🏁 Get Started
 

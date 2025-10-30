@@ -8,9 +8,9 @@ A lightweight icon library delivering Font Awesome's high-quality icons via a fr
 
 ## ✨ Features
 
-- **📦 Minimal Bundle Size:** Your final bundle only includes the icons you actually import. Over 80% smaller than traditional component libraries in our benchmarks.
 - **🌳 Perfect Tree-shaking:** The architecture ensures that unused icons are always eliminated from your production build.
 - **🧩 Framework Agnostic:** Built with a native Web Component. Works in React, Svelte, Vue, Astro, or simple HTML without wrappers.
+- **👥 Extensible by the community:** Propose new icons to create the most complete icon library with high quality.
 - **🎨 Intuitive Styling:** Style icons directly with your favorite utility classes. No new APIs to learn.
 - **🚀 Simple API:** No complex configuration. Import your icon's SVG and pass it to the component.
 
