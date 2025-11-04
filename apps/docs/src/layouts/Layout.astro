@@ -19,10 +19,7 @@ const url = Astro.url;
     <script>
       import "@ev-forge/icons"; // 👈 register the web component before to use it
     </script>
-    <script>
-      import { trackPageView } from "../logs/logs.utils.ts";
-      trackPageView();
-    </script>
+    <script src="../logs/logsTrackingView.ts"></script>
   </head>
   <body class="bg-ev-background text-ev-foreground">
     <header
