@@ -33,7 +33,12 @@ jobs:
           pwd
           echo "-----------------------------------"
           echo "Listing files recursively from current directory:"
-          ls -R
+          find . \
+            -path './node_modules' -prune -o \
+            -path '*/node_modules' -prune -o \
+            -path './apps/docs/public/icons' -prune -o \
+            -path './packages/icons/src/assets' -prune -o \
+            -print
           echo "-----------------------------------"
 
       - uses: oven-sh/setup-bun@v2 # install bun to run the sync script
