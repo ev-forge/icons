@@ -44,7 +44,8 @@ const syncIcons = async (prefix: string, sourcePath: string, logsPath: string): 
     const withHash = addContentHashToIcons(optimal)
     saveObjectArrayToFile(`${logsPath}/_withHash.json`, withHash)
     const duplicated: string[] = []
-    const withoutRepetition = withHash.reduce((a, c): Record<string, WithAliases> => {
+    const sortedWithHash = withHash.sort((a, b) => a.name.localeCompare(b.name));
+    const withoutRepetition = sortedWithHash.reduce((a, c): Record<string, WithAliases> => {
         if (!a[c.hash]) return { ...a, [c.hash]: { ...c, aliases: [] } }
         duplicated.push(`duplicated: ${c.name}  -->  ${a[c.hash].name}`)
         return { ...a, [c.hash]: { ...a[c.hash], aliases: [...a[c.hash].aliases, c.name] } }
@@ -99,5 +100,9 @@ writeFileSync(path.resolve(__dirname, `../src/gen/metadata.ts`), content);
 
 // 3. write icons on public: icons to display on browser
 const confirmation = await askYN('Confirm to write on docs/public?')
-if (confirmation) iconsData.forEach(c => writeFileSync(path.resolve(publicPath, `${c.code}.svg`), c.content))
+
+if (confirmation) iconsData.forEach(c => {
+    if (c.code.includes("rush")) console.log(c.code)
+    writeFileSync(path.resolve(publicPath, `${c.code}.svg`), c.content)
+})
 else console.info("❌ Operation canceled")
