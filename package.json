@@ -8,7 +8,7 @@
     "url": "https://github.com/ev-forge/icons.git"
   },
   "scripts": {
-    "sync": "pnpm --filter ./packages/icons sync",
+    "sync": "pnpm --filter icons run sync",
     "build": "pnpm -r run build",
     "lint": "pnpm -r lint"
   },

@@ -36,14 +36,14 @@ _For a detailed analysis and to reproduce these results, please see the [benchma
 
 ```tsx
 // 1. import icons
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
+import { solidHouse, solidRadio } from "@ev-forge/icons";
 
 // 2. use them in ev-icon
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
-      <ev-icon svg={svgRadioSolid} />
+      <ev-icon svg={solidHouse} class="w-6 text-blue-500" />
+      <ev-icon svg={solidRadio} />
     </div>
   );
 }

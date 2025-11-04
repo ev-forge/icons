@@ -39,12 +39,12 @@ npm i @ev-forge/icons
 3. Import and Use
 
 ```tsx
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
+import { solidHouse } from "@ev-forge/icons";
 
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
+      <ev-icon svg={solidHouse} class="w-6 text-blue-500" />
     </div>
   );
 }
@@ -83,13 +83,13 @@ export const IconLibraryRegistry = () => {
 
 ```tsx
 // 1. import icons
-import { svgHomeSolid, svgRadioSolid } from "@ev-forge/icons";
+import { solidHouse } from "@ev-forge/icons";
 
 // 2. use them in ev-icon
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
+      <ev-icon svg={solidHouse} class="w-6 text-blue-500" />
     </div>
   );
 }
@@ -122,12 +122,12 @@ npm i @ev-forge/icons
 
 ```tsx
 // ℹ️ example in react:
-import { svgHomeSolid } from "@ev-forge/icons";
+import { solidHouse } from "@ev-forge/icons";
 
 function MyApp() {
   return (
     <div>
-      <ev-icon svg={svgHomeSolid} class="w-6 text-blue-500" />
+      <ev-icon svg={solidHouse} class="w-6 text-blue-500" />
     </div>
   );
 }
@@ -136,14 +136,14 @@ function MyApp() {
 ```tsx
 // ℹ️ example in astro Jsx:
 ---
-import { svgRocketSolid } from "@ev-forge/icons";
+import { solidRocket } from "@ev-forge/icons";
 
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <a href="/" class="p-2 flex items-center gap-2">
-  Get Started <ev-icon svg={svgRocketSolid}></ev-icon>
+  Get Started <ev-icon svg={solidRocket}></ev-icon>
   </a>
 </Layout>
 ```
@@ -160,7 +160,7 @@ Apply size and color classes directly to the component.
 
 ```html
 <!-- A 24px (w-6) red icon -->
-<ev-icon svg="{svgRadioSolid}" class="w-6 text-red-500" />
+<ev-icon svg="{solidRadio}" class="w-6 text-red-500" />
 ```
 
 ### Using a Global Stylesheet

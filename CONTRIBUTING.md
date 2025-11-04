@@ -27,10 +27,10 @@ This project is a `pnpm` monorepo.
 
     ```bash
     # For the icon library
-    pnpm dev:lib
+    pnpm --filter icon run dev
 
     # For the docs site
-    pnpm dev:doc
+    pnpm --filter docs run dev
     ```
 
 ---
@@ -46,9 +46,9 @@ If you are contributing a new icon (after your RFC was approved):
    - `fill="currentColor"` inherit the text color, then remove the colors property on the `path` tags to inherit from `svg`
 
 2. Add your new `.svg` file to the appropriate category in `packages/icons/src/assets/community`.
-3. **Regenerate the icon metadata.** This is a critical step. Run the following command from the **root directory**:
+3. **Regenerate the icon metadata.** This is a critical step. Run the following command from the **root directory** to execute the pipeline (verify, fix, gen metadata, gen exportable SVGs and copy to `docs/public`), you need **`bun`** to make this command works (I will improve it 💪):
    ```bash
-   pnpm icons:generate
+   pnpm sync
    ```
    This command updates the necessary type definitions and asset manifests for both the library and the docs site.
 
@@ -90,6 +90,7 @@ If you are contributing a new icon (after your RFC was approved):
 
 1.  Create your branch from `main`.
 2.  Make your changes.
-3.  **Ensure all checks pass** before submitting: `pnpm lint` and `pnpm test`.
+<!-- 3.  **Ensure all checks pass** before submitting: `pnpm lint` and `pnpm test`. -->
+3.  **Ensure run sync script** before submitting: `pnpm sync`.
 4.  Commit your work and open a Pull Request.
 5.  In your PR description, please **link to the approved issue** it resolves.

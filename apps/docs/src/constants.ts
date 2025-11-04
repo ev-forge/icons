@@ -21,11 +21,9 @@ export const REGISTER_IN_ASTRO = `<script>
   import "@ev-forge/icons";
 </script>`
 
-export const EXAMPLE_REACT = `import { svgHomeSolid } from "@ev-forge/icons";
+export const EXAMPLE_REACT = `import { solidHouse } from "@ev-forge/icons";
 const MyComponent = () => {
-  return <div>
-    <ev-icon svg={svgHomeSolid}/>
-  </div>
+  return <div><ev-icon svg={solidHouse}/></div>
 }`
 
 export const LINKS = {
