@@ -34,17 +34,19 @@ jobs:
 
       - name: Check working directory
         run: |
-          echo "Current working directory:"
-          pwd
-          echo "-----------------------------------"
-          echo "Listing files recursively from current directory:"
-          find . \
-            -path './node_modules' -prune -o \
-            -path '*/node_modules' -prune -o \
-            -path './apps/docs/public/icons' -prune -o \
-            -path './packages/icons/src/assets' -prune -o \
-            -print
-          echo "-----------------------------------"
+          grep -n "PersonWalking" ./packages/icons/dist/final.es.js
+
+        # echo "Current working directory:"
+        # pwd
+        # echo "-----------------------------------"
+        # echo "Listing files recursively from current directory:"
+        # find . \
+        #   -path './node_modules' -prune -o \
+        #   -path '*/node_modules' -prune -o \
+        #   -path './apps/docs/public/icons' -prune -o \
+        #   -path './packages/icons/src/assets' -prune -o \
+        #   -print
+        # echo "-----------------------------------"
 
       - run: pnpm --filter docs build
       - run: pnpm add -w -D wrangler@3.90.0
