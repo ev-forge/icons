@@ -29,19 +29,5 @@ jobs:
           node-version: 18
           cache: "pnpm"
 
-      - name: Build Project
-        run: |
-          echo "Current working directory:"
-          pwd
-          echo "-----------------------------------"
-          echo "Listing files recursively from current directory:"
-          find . \
-            -path './node_modules' -prune -o \
-            -path '*/node_modules' -prune -o \
-            -path './apps/docs/public/icons' -prune -o \
-            -path './packages/icons/src/assets' -prune -o \
-            -print
-          echo "-----------------------------------"
-
       - run: pnpm lint
       - run: pnpm build

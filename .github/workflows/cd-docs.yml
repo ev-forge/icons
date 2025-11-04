@@ -27,7 +27,12 @@ jobs:
           node-version: 18
           cache: "pnpm"
 
-      - name: Build Project
+      - uses: oven-sh/setup-bun@v2 # install bun to run the sync script
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run sync --yes
+      - run: pnpm --filter icons build
+
+      - name: Check working directory
         run: |
           echo "Current working directory:"
           pwd
@@ -41,10 +46,6 @@ jobs:
             -print
           echo "-----------------------------------"
 
-      - uses: oven-sh/setup-bun@v2 # install bun to run the sync script
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run sync --yes
-      - run: pnpm --filter icons build
       - run: pnpm --filter docs build
       - run: pnpm add -w -D wrangler@3.90.0
 
