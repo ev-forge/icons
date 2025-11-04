@@ -1,31 +1,27 @@
 import { useEffect, useState } from "react";
+import { Button } from "@ev-forge/components";
+import type { Metadata } from "@ev-forge/icons";
 
-const toCamelCase = (str: string) =>
-  str
-    .replace(/-./g, (match) => match.charAt(1).toUpperCase())
-    .replace(/^./, (match) => match.toLowerCase());
-
-const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
-
-type BoxProps = { label: string; code: string };
-export const Box = ({ label, code }: BoxProps) => {
+type BoxProps = {
+  metadata: Metadata;
+  fnSelectIcon: (_: Metadata) => void;
+};
+export const Box = ({ metadata, fnSelectIcon }: BoxProps) => {
   const [wasCopied, setWasCopied] = useState(false);
   const [svgContent, setSvgContent] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
   const onCopy = async () => {
-    if (wasCopied) return;
-
-    await navigator.clipboard.writeText(code);
+    await navigator.clipboard.writeText(metadata.code);
     setWasCopied(true);
-    setTimeout(() => setWasCopied(false), 2000);
+    setTimeout(() => setWasCopied(false), 3000);
   };
 
   useEffect(() => {
     try {
       setSvgContent(null);
       setError(false);
-      const pathFixed = `/icons/${label}.svg`;
+      const pathFixed = `/icons/${metadata.code}.svg`;
       fetch(pathFixed)
         .then((response) => {
           if (!response.ok) throw new Error("Network response was not ok");
@@ -40,24 +36,26 @@ export const Box = ({ label, code }: BoxProps) => {
 
   if (error) return <div className="bg-amber-700">{error}</div>;
 
+  if (wasCopied)
+    return (
+      <div className="w-24 p-2 md:w-30 md:p-4 rounded-2xl aspect-square grid place-items-center bg-ev-primary-harder text-ev-primary-contrast">
+        <p className="w-full text-center font-bold">Prop Copied!</p>
+        <Button
+          onClick={() => fnSelectIcon(metadata)}
+          _color="foreground"
+          _size="sm"
+        >
+          Example
+        </Button>
+      </div>
+    );
+
   return (
     <button
       onClick={onCopy}
-      className={`w-40 md:w-[180px] p-4 rounded-2xl aspect-square grid grid-rows-[2fr_1fr] place-items-center gap-2 ${
-        wasCopied
-          ? "bg-ev-primary-harder text-ev-primary-contrast"
-          : "bg-white hover:bg-ev-primary hover:text-ev-primary-contrast"
-      }`}
+      className={`w-24 p-2 md:w-30 md:p-4 text-2xl md:text-4xl rounded-2xl aspect-square grid place-items-center ${"bg-white hover:bg-ev-primary hover:text-ev-primary-contrast"}`}
     >
-      {svgContent && <ev-icon svg={svgContent} className="w-16" />}
-      {wasCopied && (
-        <p className="w-full text-center font-bold">Prop Copied!</p>
-      )}
-      {!wasCopied && (
-        <div className="w-full flex flex-col">
-          <div className="text-sm">{label}</div>
-        </div>
-      )}
+      {svgContent && <ev-icon svg={svgContent} />}
     </button>
   );
 };

@@ -52,6 +52,38 @@ If you are contributing a new icon (after your RFC was approved):
    ```
    This command updates the necessary type definitions and asset manifests for both the library and the docs site.
 
+### 📜 Golden Rules for Creating Optimized SVG Icons
+
+#### Rule 1: Minimize Anchor Points
+
+- What (For Designers): Use the absolute minimum number of vector points needed to define a shape. Every point should be essential.
+- Why (For Developers): Fewer points create a shorter d attribute string in the <path> element, directly reducing file size.
+
+#### Rule 2: Snap to the Pixel Grid
+
+- What (For Designers): Align all anchor points to whole-number coordinates (e.g., X:10, Y:25). Avoid fractional values.
+- Why (For Developers): Integer coordinates are highly resistant to compression. This allows for aggressive decimal precision reduction during optimization without causing visual distortion.
+
+#### Rule 3: Unify into a Single Shape
+
+- What (For Designers): For any solid, single-color icon, select all its individual parts and use the "Union Selection" (or equivalent boolean operation) to merge them into one single shape before exporting.
+- Why (For Developers): This produces a single, robust <path> element. It ensures the icon’s geometry (including cutouts) remains locked together during optimization, preventing parts from shifting and resulting in the smallest possible file.
+
+#### Rule 4: Build Outlines, Don't Use Stroke
+
+- What (For Designers): To create an outline ("regular") icon, build it as a closed shape with a hole inside (a compound path). Do not simply apply a stroke property to a line.
+- Why (For Developers): Icons should not rely on the stroke property for their appearance. A filled compound path (using fill-rule) guarantees consistent rendering and avoids issues with stroke scaling.
+
+#### Rule 5: Build Effects Manually
+
+- What (For Designers): Avoid using built-in layer effects like "Drop Shadow." Instead, create these effects by hand using solid shapes with varying opacities.
+- Why (For Developers): Design tool effects are exported as multiple, complex, and often rasterized SVG elements. Manually built effects export as clean <path>s, leading to smaller, more predictable files.
+
+#### Rule 6: Always Convert Text to Outlines
+
+- What (For Designers): For any text within an icon, always convert it to vector shapes ("Create Outlines") before exporting.
+- Why (For Developers): This removes external font dependencies, making the icon a self-contained asset. It guarantees the icon will render identically everywhere, regardless of available system or web fonts.
+
 ---
 
 ## ✅ Submitting a Pull Request

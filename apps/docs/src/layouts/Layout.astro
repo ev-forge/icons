@@ -1,5 +1,5 @@
 ---
-import { svgGithubBrands } from "@ev-forge/icons";
+import { brandsGithub } from "@ev-forge/icons";
 import { Link } from "@ev-forge/components";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
@@ -30,16 +30,16 @@ const url = Astro.url;
         <Link
           href="/"
           _variant={`${url.pathname === "/browser" ? "solid" : "flat"}`}
-          className="p-1"
-          target="_blank"
-          rel="noopener noreferrer">@ev-forge/icons</Link
+          className="p-1">@ev-forge/icons</Link
         >
         <Link
           href={LINKS["ev-forge-icons"]}
           _variant={`${url.pathname === "/browser" ? "solid" : "flat"}`}
           className="p-1"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <ev-icon svg={svgGithubBrands} class="text-2xl"></ev-icon>
+          <ev-icon svg={brandsGithub} class="text-2xl"></ev-icon>
         </Link>
       </div>
     </header>

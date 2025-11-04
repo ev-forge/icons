@@ -1,16 +1,16 @@
 ---
 import {
-  svgCloudSolid,
-  svgDogSolid,
-  svgExternalLinkAltSolid,
-  svgParachuteBoxSolid,
-  svgPersonBikingSolid,
-  svgPersonDressSolid,
-  svgPersonSolid,
-  svgPersonWalkingSolid,
-  svgPersonWalkingWithCaneSolid,
-  svgRocketSolid,
-  svgWheelchairMoveSolid,
+  solidCloud,
+  solidDog,
+  solidUpRightFromSquare,
+  solidParachuteBox,
+  solidBiking,
+  solidPersonDress,
+  solidPerson,
+  solidPersonWalking,
+  solidPersonWalkingWithCane,
+  solidRocket,
+  solidWheelchair,
 } from "@ev-forge/icons";
 
 import { Link } from "@ev-forge/components";
@@ -44,13 +44,13 @@ import { CodeBlock } from "../components/CodeBlock";
         <div class="mt-[50px] flex flex-col justify-center items-center gap-4">
           <div class="relative w-full max-w-3xs">
             <ev-icon
-              svg={svgDogSolid}
+              svg={solidDog}
               class="absolute text-base bottom-full right-24"></ev-icon>
             <ev-icon
-              svg={svgPersonWalkingSolid}
+              svg={solidPersonWalking}
               class="absolute text-2xl bottom-full right-16"></ev-icon>
             <ev-icon
-              svg={svgRocketSolid}
+              svg={solidRocket}
               class="absolute text-5xl -rotate-45 bottom-[calc(100%-8px)] right-0"
             ></ev-icon>
             <Link
@@ -64,7 +64,9 @@ import { CodeBlock } from "../components/CodeBlock";
           <Link
             href={LINKS["browser-icons"]}
             className="py-1.5 px-3.5 flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
-            >Browse Icons<ev-icon svg={svgExternalLinkAltSolid}></ev-icon>
+            target="_blank"
+            rel="noopener noreferrer"
+            >Browse Icons<ev-icon svg={solidUpRightFromSquare}></ev-icon>
           </Link>
         </div>
       </p>
@@ -137,27 +139,27 @@ import { CodeBlock } from "../components/CodeBlock";
           </div>
           <div class="relative w-full max-w-[343px] h-[140px]">
             <ev-icon
-              svg={svgCloudSolid}
+              svg={solidCloud}
               class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] left-12"
             ></ev-icon>
             <ev-icon
-              svg={svgCloudSolid}
+              svg={solidCloud}
               class="absolute text-ev-destructive-contrast text-3xl bottom-[118px] left-24"
             ></ev-icon>
             <ev-icon
-              svg={svgParachuteBoxSolid}
+              svg={solidParachuteBox}
               class="absolute text-[#FFC909] text-5xl translate-x-1/2 bottom-[72px] right-1/2"
             ></ev-icon>
             <ev-icon
-              svg={svgCloudSolid}
+              svg={solidCloud}
               class="absolute text-ev-destructive-contrast text-3xl bottom-[119px] right-28"
             ></ev-icon>
             <ev-icon
-              svg={svgCloudSolid}
+              svg={solidCloud}
               class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-24"
             ></ev-icon>
             <ev-icon
-              svg={svgCloudSolid}
+              svg={solidCloud}
               class="absolute text-ev-destructive-contrast text-3xl bottom-[107px] right-9"
             ></ev-icon>
           </div>
@@ -169,45 +171,45 @@ import { CodeBlock } from "../components/CodeBlock";
         >
           <div class="relative w-full max-w-[343px] h-12">
             <ev-icon
-              svg={svgDogSolid}
+              svg={solidDog}
               class="absolute text-base bottom-1 left-[29px]"></ev-icon>
             <ev-icon
-              svg={svgPersonWalkingSolid}
+              svg={solidPersonWalking}
               class="absolute text-2xl bottom-2 left-[49px]"></ev-icon>
             <ev-icon
-              svg={svgWheelchairMoveSolid}
+              svg={solidWheelchair}
               class="absolute text-2xl bottom-11 left-[77px]"></ev-icon>
             <ev-icon
-              svg={svgPersonDressSolid}
+              svg={solidPersonDress}
               class="absolute text-2xl bottom-[26px] left-[119px]"></ev-icon>
             <ev-icon
-              svg={svgPersonSolid}
+              svg={solidPerson}
               class="absolute text-2xl bottom-6 left-32"></ev-icon>
             <ev-icon
-              svg={svgPersonSolid}
+              svg={solidPerson}
               class="absolute text-2xl bottom-[42px] left-[137px]"></ev-icon>
             <ev-icon
-              svg={svgPersonWalkingWithCaneSolid}
+              svg={solidPersonWalkingWithCane}
               class="absolute text-2xl bottom-0 right-[108px] rotate-x-370 rotate-y-200"
             ></ev-icon>
             <ev-icon
-              svg={svgPersonSolid}
+              svg={solidPerson}
               class="absolute text-2xl translate-x-1/2 bottom-4 right-1/2"
             ></ev-icon>
             <ev-icon
-              svg={svgPersonSolid}
+              svg={solidPerson}
               class="absolute text-2xl bottom-[26px] right-[151px]"></ev-icon>
             <ev-icon
-              svg={svgPersonDressSolid}
+              svg={solidPersonDress}
               class="absolute text-2xl bottom-[42px] right-[142px]"></ev-icon>
             <ev-icon
-              svg={svgPersonSolid}
+              svg={solidPerson}
               class="absolute text-2xl bottom-7 right-[121px]"></ev-icon>
             <ev-icon
-              svg={svgPersonDressSolid}
+              svg={solidPersonDress}
               class="absolute text-2xl bottom-[30px] right-[108px]"></ev-icon>
             <ev-icon
-              svg={svgPersonBikingSolid}
+              svg={solidBiking}
               class="absolute text-2xl bottom-[42px] right-[29px] rotate-x-360 rotate-y-220"
             ></ev-icon>
           </div>

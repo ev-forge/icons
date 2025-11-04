@@ -1,30 +1,35 @@
 import {
-  svgCloudSolid,
-  svgMotorcycleSolid,
-  svgPersonWalkingSolid,
-  svgSearchSolid,
+  solidCloud,
+  solidMotorcycle,
+  solidMultiply,
+  solidPersonWalking,
+  solidSearch,
 } from "@ev-forge/icons";
-import { metadata } from "@ev-forge/icons";
+import { metadata, type Metadata } from "@ev-forge/icons";
 import { useEffect, useState } from "react";
 import { Box } from "../Box";
 import { useDebounce } from "../hooks/useDebounce";
-import { Button, Input } from "@ev-forge/components";
+import { Button, IconButton, Input } from "@ev-forge/components";
+import { CodeBlock } from "./CodeBlock";
 
-type MetadataItem = { name: string; code: string };
-const filterItems = (query: string, items: MetadataItem[]): MetadataItem[] => {
-  console.log({ query, items });
+const filterItems = (query: string, items: Metadata[]): Metadata[] => {
   if (!query) return [];
-  const rr = items
-    .filter((c) => c.name.toLocaleLowerCase().includes(query.toLowerCase()))
-    .slice(0, 20);
-  console.log({ rr });
-  return rr;
+  const queryLowerCase = query.toLowerCase();
+  return items
+    .filter((c) => {
+      // ℹ️ search into name and aliases
+      return [c.name, ...c.aliases].some((c) =>
+        c.toLowerCase().includes(queryLowerCase)
+      );
+    })
+    .slice(0, 30);
 };
 
 export const Previewer = () => {
   const [query, setQuery] = useState("");
   const queryDebounce = useDebounce(query, 500);
-  const [filteredMetadata, setFilteredMetadata] = useState<MetadataItem[]>([]);
+  const [filteredMetadata, setFilteredMetadata] = useState<Metadata[]>([]);
+  const [selectedIcon, setSelectedIcon] = useState<Metadata | null>(null);
 
   useEffect(() => {
     setFilteredMetadata(filterItems(queryDebounce, metadata));
@@ -37,60 +42,49 @@ export const Previewer = () => {
           query
             ? "h-[calc(40dvh-141px)] border-none pb-11"
             : "h-[40dvh] border-b-2 pb-0"
-        } w-full transition-[height] bg-ev-primary flex flex-col items-center justify-center gap-0 border-b-2`}
+        } px-4 w-full transition-[height] bg-ev-primary flex flex-col items-center justify-center gap-0 border-b-2`}
       >
-        <div className={"relative w-full max-w-[375px] flex-1 px-4"}>
-          <ev-icon
-            svg={svgCloudSolid}
-            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
-              query
-                ? "text-[60px] bottom-[22px] left-[150px]"
-                : "text-[80px] bottom-14 left-9"
-            }`}
-          ></ev-icon>
-          <ev-icon
-            svg={svgCloudSolid}
-            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
-              query
-                ? "text-[32px] bottom-[41px] right-[120px]"
-                : "text-[43px] bottom-[81px] left-[147px]"
-            } `}
-          ></ev-icon>
-          <ev-icon
-            svg={svgCloudSolid}
-            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
-              query
-                ? "text-[32px] bottom-[27px] right-[110px]"
-                : "text-[43px] bottom-[61px] right-[148px]"
-            }`}
-          ></ev-icon>
-          <ev-icon
-            svg={svgCloudSolid}
-            className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${
-              query ? "text-[67px] bottom-[21px]" : "text-[91px] bottom-14"
-            } right-9`}
-          ></ev-icon>
-        </div>
-        <div className="relative w-full max-w-[800px] px-4">
+        {!query && (
+          <div className={"relative w-full max-w-[375px] flex-1 px-4"}>
+            <ev-icon
+              svg={solidCloud}
+              className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${"text-[80px] bottom-14 left-9"}`}
+            ></ev-icon>
+            <ev-icon
+              svg={solidCloud}
+              className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${"text-[43px] bottom-[81px] left-[147px]"} `}
+            ></ev-icon>
+            <ev-icon
+              svg={solidCloud}
+              className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${"text-[43px] bottom-[101px] right-[120px]"}`}
+            ></ev-icon>
+            <ev-icon
+              svg={solidCloud}
+              className={`absolute transition-[left,top,right,bottom] text-ev-destructive-contrast ${"text-[91px] bottom-14"} right-9`}
+            ></ev-icon>
+          </div>
+        )}
+        <div className="relative w-full max-w-[800px] px-2 grid grid-cols-[1fr_auto] items-center rounded-4xl border-2 border-ev-background-contrast bg-ev-background">
           <Input
             _color="foreground"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             style={{ backgroundColor: "white" }}
-            className="pl-6 py-4 pr-14 rounded-4xl border-2 border-ev-background-contrast bg-ev-background placeholder:font-bold placeholder:text-center"
+            className="py-4 rounded-4xl text-xl md:text-2xl border-none bg-ev-background! placeholder:font-bold placeholder:text-center"
             placeholder="Looking for an icon?"
             autoFocus
           />
-          <Button
+          <IconButton
             _variant="solid"
             _color="foreground"
-            className="absolute translate-y-1/2 bottom-1/2 right-6 rounded-full p-2 text-3xl"
+            aria-label="Search icon"
+            className="rounded-full w-12 h-12 text-2xl"
           >
-            <ev-icon svg={svgSearchSolid}></ev-icon>
-          </Button>
+            <ev-icon svg={solidSearch}></ev-icon>
+          </IconButton>
         </div>
         <div
-          className={`relative w-full max-w-[800px] h-[68px] pr-[72px] text-ev-background flex items-end justify-end ${
+          className={`relative w-full max-w-[800px] h-[68px] pr-[72px] text-ev-background! flex items-end justify-end ${
             query ? "hidden" : "block"
           }`}
         >
@@ -100,11 +94,11 @@ export const Previewer = () => {
             viewBox="0 0 14 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute -top-0.5 right-[104px]"
+            className="absolute -top-0.5 right-[104px] text-ev-background"
           >
             <path
               d="M12.4362 1.00008L11.5261 36.8876L1.41431 1.00008H12.4362Z"
-              fill="white"
+              fill="#f8f1e5"
             />
             <line
               x1="1"
@@ -112,7 +106,7 @@ export const Previewer = () => {
               x2="10.5245"
               y2="-1"
               transform="matrix(0.999992 0.00401936 -0.00409464 0.999992 1.24146 1.99597)"
-              stroke="white"
+              stroke="#f8f1e5"
               strokeWidth="2"
               strokeLinecap="round"
             />
@@ -133,31 +127,25 @@ export const Previewer = () => {
             />
           </svg>
 
-          <ev-icon
-            svg={svgPersonWalkingSolid}
-            className=" text-[25px]"
-          ></ev-icon>
-          <ev-icon svg={svgMotorcycleSolid} className="text-[17.4]"></ev-icon>
+          <ev-icon svg={solidPersonWalking} className=" text-[25px]"></ev-icon>
+          <ev-icon svg={solidMotorcycle} className="text-[20px]"></ev-icon>
         </div>
       </section>
       <section className="flex-1 w-full max-w-[800px] p-4 flex flex-col items-center justify-center gap-7">
-        <p className="text-center">
-          Icons nomenclature: svg + name + type. Ex: svgHomeSolid
-        </p>
         {queryDebounce && filteredMetadata.length === 0 && (
           <div>Can not find icons with that name, try with with other</div>
         )}
         {queryDebounce && filteredMetadata.length > 0 && (
           <>
-            <h2 className="text-3xl font-bold">
-              Filtered {metadata.length} icons related to{" "}
+            <h2 className="text-xl md:text-3xl font-bold">
+              Filtered {filteredMetadata.length} icons related to{" "}
               <span className="font-bold text-ev-primary">
                 '{queryDebounce}'
               </span>
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
               {filteredMetadata.map((c) => (
-                <Box key={c.name} label={c.name} code={c.code} />
+                <Box key={c.code} metadata={c} fnSelectIcon={setSelectedIcon} />
               ))}
             </div>
           </>
@@ -174,7 +162,7 @@ export const Previewer = () => {
 
             <div className="flex flex-wrap justify-center gap-4">
               {filteredMetadata.map((c) => (
-                <Box key={c.name} label={c.name} code={c.code} />
+                <Box key={c.code} metadata={c} fnSelectIcon={setSelectedIcon} />
               ))}
             </div>
 
@@ -187,6 +175,28 @@ export const Previewer = () => {
           </>
         )}
       </section>
+      {selectedIcon && (
+        <section className="sticky bottom-0 max-w-[800px] w-full py-2 px-4">
+          <div className="p-2 bg-ev-background-hard text-ev-foreground rounded-xl">
+            <div className="flex justify-between items-center mb-1">
+              <h2 className="mb-2 font-bold">Usage example</h2>
+              <IconButton
+                aria-label="Close example"
+                onClick={() => setSelectedIcon(null)}
+                _variant="flat"
+                _size="sm"
+              >
+                <ev-icon svg={solidMultiply} />
+              </IconButton>
+            </div>
+            <CodeBlock
+              lang="javascript"
+              code={`import {${selectedIcon.code}} from "@ev-forge/icons"
+const App = () => <ev-icon svg={${selectedIcon.code}} />`}
+            />
+          </div>
+        </section>
+      )}
     </main>
   );
 };

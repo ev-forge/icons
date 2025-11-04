@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { IconButton } from "@ev-forge/components";
-import { svgCheckCircleSolid, svgCopySolid } from "@ev-forge/icons";
+import { solidCheck, solidCopy } from "@ev-forge/icons";
 
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
@@ -23,7 +23,7 @@ export const highlight = (language: Language1, code: string) =>
 type CodeBlockProps = { lang: Language1; code: string };
 export const CodeBlock = ({ lang, code }: CodeBlockProps) => {
   const [copied, setCopied] = useState(false);
-  const highlighted = useMemo(() => highlight(lang, code), []);
+  const highlighted = useMemo(() => highlight(lang, code), [lang, code]);
 
   const onCopy = () => {
     try {
@@ -40,7 +40,7 @@ export const CodeBlock = ({ lang, code }: CodeBlockProps) => {
       <div className="px-2 mx-2 flex justify-between items-center  ">
         <div className="capitalize">{lang}</div>
         <IconButton onClick={onCopy} aria-label="Copy" _size="sm">
-          <ev-icon svg={copied ? svgCheckCircleSolid : svgCopySolid} />
+          <ev-icon svg={copied ? solidCheck : solidCopy} />
         </IconButton>
       </div>
       <pre className="rounded-b-md">
