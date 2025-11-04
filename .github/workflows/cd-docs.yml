@@ -34,7 +34,7 @@ jobs:
 
       - name: Check working directory
         run: |
-          grep -n "PersonWalking" ./packages/icons/dist/final.es.js
+          grep -n "solidPersonWalking" ./packages/icons/dist/ev-icon.es.js
 
         # echo "Current working directory:"
         # pwd
