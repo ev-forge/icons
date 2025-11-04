@@ -1,9 +1,9 @@
 import {
   solidCloud,
   solidMotorcycle,
-  solidMultiply,
+  solidClose,
   solidPersonWalking,
-  solidSearch,
+  solidMagnifyingGlass,
 } from "@ev-forge/icons";
 import { metadata, type Metadata } from "@ev-forge/icons";
 import { useEffect, useState } from "react";
@@ -80,7 +80,7 @@ export const Previewer = () => {
             aria-label="Search icon"
             className="rounded-full w-12 h-12 text-2xl"
           >
-            <ev-icon svg={solidSearch}></ev-icon>
+            <ev-icon svg={solidMagnifyingGlass}></ev-icon>
           </IconButton>
         </div>
         <div
@@ -186,7 +186,7 @@ export const Previewer = () => {
                 _variant="flat"
                 _size="sm"
               >
-                <ev-icon svg={solidMultiply} />
+                <ev-icon svg={solidClose} />
               </IconButton>
             </div>
             <CodeBlock

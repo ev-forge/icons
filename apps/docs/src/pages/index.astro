@@ -2,15 +2,15 @@
 import {
   solidCloud,
   solidDog,
-  solidUpRightFromSquare,
   solidParachuteBox,
   solidBiking,
-  solidPersonDress,
-  solidPerson,
+  solidMale,
   solidPersonWalking,
-  solidPersonWalkingWithCane,
+  solidBlind,
   solidRocket,
   solidWheelchair,
+  solidArrowUpRightFromSquare,
+  solidFemale,
 } from "@ev-forge/icons";
 
 import { Link } from "@ev-forge/components";
@@ -66,7 +66,7 @@ import { CodeBlock } from "../components/CodeBlock";
             className="py-1.5 px-3.5 flex items-center justify-center gap-2 border-2 border-ev-primary rounded-md"
             target="_blank"
             rel="noopener noreferrer"
-            >Browse Icons<ev-icon svg={solidUpRightFromSquare}></ev-icon>
+            >Browse Icons<ev-icon svg={solidArrowUpRightFromSquare}></ev-icon>
           </Link>
         </div>
       </p>
@@ -180,33 +180,32 @@ import { CodeBlock } from "../components/CodeBlock";
               svg={solidWheelchair}
               class="absolute text-2xl bottom-11 left-[77px]"></ev-icon>
             <ev-icon
-              svg={solidPersonDress}
+              svg={solidFemale}
               class="absolute text-2xl bottom-[26px] left-[119px]"></ev-icon>
+            <ev-icon svg={solidMale} class="absolute text-2xl bottom-6 left-32"
+            ></ev-icon>
             <ev-icon
-              svg={solidPerson}
-              class="absolute text-2xl bottom-6 left-32"></ev-icon>
-            <ev-icon
-              svg={solidPerson}
+              svg={solidMale}
               class="absolute text-2xl bottom-[42px] left-[137px]"></ev-icon>
             <ev-icon
-              svg={solidPersonWalkingWithCane}
+              svg={solidBlind}
               class="absolute text-2xl bottom-0 right-[108px] rotate-x-370 rotate-y-200"
             ></ev-icon>
             <ev-icon
-              svg={solidPerson}
+              svg={solidMale}
               class="absolute text-2xl translate-x-1/2 bottom-4 right-1/2"
             ></ev-icon>
             <ev-icon
-              svg={solidPerson}
+              svg={solidMale}
               class="absolute text-2xl bottom-[26px] right-[151px]"></ev-icon>
             <ev-icon
-              svg={solidPersonDress}
+              svg={solidFemale}
               class="absolute text-2xl bottom-[42px] right-[142px]"></ev-icon>
             <ev-icon
-              svg={solidPerson}
+              svg={solidMale}
               class="absolute text-2xl bottom-7 right-[121px]"></ev-icon>
             <ev-icon
-              svg={solidPersonDress}
+              svg={solidFemale}
               class="absolute text-2xl bottom-[30px] right-[108px]"></ev-icon>
             <ev-icon
               svg={solidBiking}
