@@ -27,6 +27,15 @@ jobs:
           node-version: 18
           cache: "pnpm"
 
+      - name: Build Project
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "-----------------------------------"
+          echo "Listing files recursively from current directory:"
+          ls -R
+          echo "-----------------------------------"
+
       - uses: oven-sh/setup-bun@v2 # install bun to run the sync script
       - run: pnpm install --frozen-lockfile
       - run: pnpm run sync
