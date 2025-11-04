@@ -45,5 +45,13 @@
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^1.0.0",
+    "@types/svg-path-parser": "^1.1.6",
+    "cheerio": "^1.1.2",
+    "svg-path-parser": "^1.1.0",
+    "svgo": "^4.0.0",
+    "svgpath": "^2.6.0"
   }
 }
