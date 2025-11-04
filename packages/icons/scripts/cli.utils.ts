@@ -2,6 +2,11 @@ import readline from 'readline';
 
 export const askYN = async (message: string): Promise<boolean> => new Promise((resolve, reject) => {
     try {
+        const autoYes = process.env.CI === 'true' || process.argv.includes('--yes');
+        if (autoYes) {
+            return resolve(true)
+        }
+
         const rl = readline.createInterface({
             input: process.stdin,
             output: process.stdout

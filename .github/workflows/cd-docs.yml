@@ -38,7 +38,7 @@ jobs:
 
       - uses: oven-sh/setup-bun@v2 # install bun to run the sync script
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run sync
+      - run: pnpm run sync --yes
       - run: pnpm --filter icons build
       - run: pnpm --filter docs build
       - run: pnpm add -w -D wrangler@3.90.0

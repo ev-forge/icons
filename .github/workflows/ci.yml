@@ -29,5 +29,14 @@ jobs:
           node-version: 18
           cache: "pnpm"
 
+      - name: Build Project
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "-----------------------------------"
+          echo "Listing files recursively from current directory:"
+          ls -R
+          echo "-----------------------------------"
+
       - run: pnpm lint
       - run: pnpm build
