@@ -11,6 +11,13 @@ import { Box } from "../Box";
 import { useDebounce } from "../hooks/useDebounce";
 import { Button, IconButton, Input } from "@ev-forge/components";
 import { CodeBlock } from "./CodeBlock";
+import { ICONS_PER_PAGE } from "../constants";
+import { onGetItemsPerPage } from "../utils";
+
+const TOTAL_ITEMS = metadata.length;
+const REST = TOTAL_ITEMS % ICONS_PER_PAGE;
+const PAGES = Math.trunc(TOTAL_ITEMS / ICONS_PER_PAGE);
+const TOTAL_PAGES = REST ? PAGES + 1 : PAGES;
 
 const filterItems = (query: string, items: Metadata[]): Metadata[] => {
   if (!query) return [];
@@ -24,12 +31,31 @@ const filterItems = (query: string, items: Metadata[]): Metadata[] => {
     })
     .slice(0, 30);
 };
-
+console.log({ metadata });
 export const Previewer = () => {
   const [query, setQuery] = useState("");
   const queryDebounce = useDebounce(query, 500);
   const [filteredMetadata, setFilteredMetadata] = useState<Metadata[]>([]);
   const [selectedIcon, setSelectedIcon] = useState<Metadata | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const onLoadNextPage = () => {
+    try {
+      const nextPage = currentPage + 1;
+      const nextPageItems = onGetItemsPerPage<Metadata>({
+        page: nextPage,
+        itemsPerPage: ICONS_PER_PAGE,
+        totalItems: TOTAL_ITEMS,
+        totalPages: TOTAL_PAGES,
+        itemsList: metadata,
+        restOfItems: REST,
+      });
+      setFilteredMetadata((p) => [...p, ...nextPageItems]);
+      setCurrentPage(nextPage);
+    } catch (error) {
+      console.error({ error });
+    }
+  };
 
   useEffect(() => {
     setFilteredMetadata(filterItems(queryDebounce, metadata));
@@ -166,11 +192,13 @@ export const Previewer = () => {
               ))}
             </div>
 
-            {/* 🚨 TODO: add infinity scroll */}
             {filteredMetadata.length === 0 && (
-              <Button onClick={() => setFilteredMetadata(metadata)}>
-                Load All
+              <Button onClick={onLoadNextPage}>
+                Load {ICONS_PER_PAGE} Icons
               </Button>
+            )}
+            {filteredMetadata.length > 0 && currentPage < TOTAL_PAGES && (
+              <Button onClick={onLoadNextPage}>Load More</Button>
             )}
           </>
         )}
