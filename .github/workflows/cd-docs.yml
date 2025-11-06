@@ -9,6 +9,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  PUBLIC_POSTHOG_KEY: ${{ secrets.PUBLIC_POSTHOG_KEY }}
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -36,18 +39,6 @@ jobs:
         run: |
           grep -n "solidPersonWalking" ./packages/icons/dist/ev-icon.es.js
 
-        # echo "Current working directory:"
-        # pwd
-        # echo "-----------------------------------"
-        # echo "Listing files recursively from current directory:"
-        # find . \
-        #   -path './node_modules' -prune -o \
-        #   -path '*/node_modules' -prune -o \
-        #   -path './apps/docs/public/icons' -prune -o \
-        #   -path './packages/icons/src/assets' -prune -o \
-        #   -print
-        # echo "-----------------------------------"
-
       - run: pnpm --filter docs build
       - run: pnpm add -w -D wrangler@3.90.0
 
@@ -59,5 +50,9 @@ jobs:
           preCommands: |
             wrangler pages project list
             wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main || true
+
+            echo "${{ secrets.PUBLIC_POSTHOG_KEY }}" > PUBLIC_POSTHOG_KEY.txt
+            wrangler pages secret put PUBLIC_POSTHOG_KEY --project-name ${{ secrets.CLOUDFLARE_PROJECT_NAME }} < PUBLIC_POSTHOG_KEY.txt
+            rm PUBLIC_POSTHOG_KEY.txt
           command: pages deploy apps/docs/dist --project-name=${{ secrets.CLOUDFLARE_DOCS_NAME }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
