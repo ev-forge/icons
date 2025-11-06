@@ -48,12 +48,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           preCommands: |
-            if ! wrangler pages project list | grep -q "${{ secrets.CLOUDFLARE_DOCS_NAME }}"; then
-              echo "Creating project"
-              wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main
-            else
-              echo "Project exist, continuing"
-            fi
+            wrangler pages project list | grep -q "${{ secrets.CLOUDFLARE_DOCS_NAME }}" && echo "Project already exists, continuing." || wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main
 
             echo "${{ secrets.PUBLIC_POSTHOG_KEY }}" > PUBLIC_POSTHOG_KEY.txt
             wrangler pages secret put PUBLIC_POSTHOG_KEY --project-name ${{ secrets.CLOUDFLARE_PROJECT_NAME }} < PUBLIC_POSTHOG_KEY.txt
