@@ -12,26 +12,13 @@ import { useDebounce } from "../hooks/useDebounce";
 import { Button, IconButton, Input } from "@ev-forge/components";
 import { CodeBlock } from "./CodeBlock";
 import { ICONS_PER_PAGE } from "../constants";
-import { onGetItemsPerPage } from "../utils";
+import { filterItems, onGetItemsPerPage } from "../utils";
 
 const TOTAL_ITEMS = metadata.length;
 const REST = TOTAL_ITEMS % ICONS_PER_PAGE;
 const PAGES = Math.trunc(TOTAL_ITEMS / ICONS_PER_PAGE);
 const TOTAL_PAGES = REST ? PAGES + 1 : PAGES;
 
-const filterItems = (query: string, items: Metadata[]): Metadata[] => {
-  if (!query) return [];
-  const queryLowerCase = query.toLowerCase();
-  return items
-    .filter((c) => {
-      // ℹ️ search into name and aliases
-      return [c.name, ...c.aliases].some((c) =>
-        c.toLowerCase().includes(queryLowerCase)
-      );
-    })
-    .slice(0, 30);
-};
-console.log({ metadata });
 export const Previewer = () => {
   const [query, setQuery] = useState("");
   const queryDebounce = useDebounce(query, 500);
@@ -197,7 +184,7 @@ export const Previewer = () => {
                 Load {ICONS_PER_PAGE} Icons
               </Button>
             )}
-            {filteredMetadata.length > 0 && currentPage < TOTAL_PAGES && (
+            {filteredMetadata.length > 0 && currentPage < TOTAL_PAGES - 1 && (
               <Button onClick={onLoadNextPage}>Load More</Button>
             )}
           </>

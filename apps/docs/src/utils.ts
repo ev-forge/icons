@@ -1,3 +1,5 @@
+import type { Metadata } from "@ev-forge/icons";
+
 type onGetItemsPerPageInput<T> = {
   page: number;
   itemsPerPage: number;
@@ -25,4 +27,17 @@ export const onGetItemsPerPage = <G>({
 
   const data = itemsList.slice(start, end);
   return data;
+};
+
+export const filterItems = (query: string, items: Metadata[]): Metadata[] => {
+  if (!query) return [];
+  const queryLowerCase = query.toLowerCase();
+  return items
+    .filter((c) => {
+      // ℹ️ search into name and aliases
+      return [c.name, ...c.aliases].some((c) =>
+        c.toLowerCase().includes(queryLowerCase)
+      );
+    })
+    .slice(0, 30);
 };

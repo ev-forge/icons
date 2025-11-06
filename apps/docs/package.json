@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "test": "vitest",
     "astro": "astro"
   },
   "dependencies": {
@@ -21,5 +22,8 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwindcss": "^4.1.14"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.7"
   }
 }
