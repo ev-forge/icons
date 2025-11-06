@@ -51,7 +51,7 @@ jobs:
             wrangler pages project list | grep -q "${{ secrets.CLOUDFLARE_DOCS_NAME }}" && echo "Project already exists, continuing." || wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main
 
             echo "${{ secrets.PUBLIC_POSTHOG_KEY }}" > PUBLIC_POSTHOG_KEY.txt
-            wrangler pages secret put PUBLIC_POSTHOG_KEY --project-name ${{ secrets.CLOUDFLARE_PROJECT_NAME }} < PUBLIC_POSTHOG_KEY.txt
+            wrangler pages secret put PUBLIC_POSTHOG_KEY --project-name ${{ secrets.CLOUDFLARE_DOCS_NAME }} < PUBLIC_POSTHOG_KEY.txt
             rm PUBLIC_POSTHOG_KEY.txt
           # preCommands: |
           #   wrangler pages project list
