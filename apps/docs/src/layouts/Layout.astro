@@ -3,7 +3,7 @@ import { brandsGithub } from "@ev-forge/icons";
 import { Link } from "@ev-forge/components";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
-import { LINKS } from "../constants";
+import { LINKS, METADATA } from "../constants";
 
 const { title } = Astro.props;
 const url = Astro.url;
@@ -11,11 +11,26 @@ const url = Astro.url;
 
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- 1. essential metadata -->
+    <meta content="text/html; charset=UTF-8" name="Content-Type" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{title ?? METADATA.title}</title>
+
+    <!-- 2. Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta name="title" property="og:title" content={title ?? METADATA.title} />
+    <meta
+      name="description"
+      property="og:description"
+      content={METADATA.description}
+    />
+    <meta name="image" property="og:image" content={METADATA.image} />
+    <meta name="author" content={METADATA.author} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta name="keywords" content={METADATA.keywords} />
+
+    <!-- 4. Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+
     <script>
       import "@ev-forge/icons"; // 👈 register the web component before to use it
     </script>

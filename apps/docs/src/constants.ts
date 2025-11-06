@@ -1,3 +1,13 @@
+export const METADATA = {
+  title: 'ev-forge/icons',
+  description: 'A lightweight icon library delivering Font Awesome\'s high-quality icons via a framework-agnostic Web Component, with perfect icon-level tree-shaking and extended to te community',
+  keywords: 'Font Awesome, Icons, Svg, Tree shaking, web components, performance, efficient icons, community icons',
+  author: 'ev-forge',
+  image: 'https://icons.jimynicanor.com/default.webp',
+  url: 'https://icons.jimynicanor.com',
+  prefix: 'EVG_ICONS'
+}
+
 export const INSTALL_EXAMPLE = `npm i @ev-forge/icons`;
 export const ADD_TYPES_EXAMPLE = `{
     "include": ["node_modules/@ev-forge/icons/dist/global.d.ts"]
