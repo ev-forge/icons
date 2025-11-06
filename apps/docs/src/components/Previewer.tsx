@@ -179,13 +179,10 @@ export const Previewer = () => {
               ))}
             </div>
 
-            {filteredMetadata.length === 0 && (
+            {filteredMetadata.length >= 0 && currentPage < TOTAL_PAGES - 1 && (
               <Button onClick={onLoadNextPage}>
-                Load {ICONS_PER_PAGE} Icons
+                Load the next {ICONS_PER_PAGE} Icons
               </Button>
-            )}
-            {filteredMetadata.length > 0 && currentPage < TOTAL_PAGES - 1 && (
-              <Button onClick={onLoadNextPage}>Load More</Button>
             )}
           </>
         )}

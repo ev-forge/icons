@@ -36,4 +36,4 @@ export const LINKS = {
   "browser-icons": "/browser",
 };
 
-export const ICONS_PER_PAGE = 250;
+export const ICONS_PER_PAGE = 30;
