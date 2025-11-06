@@ -48,11 +48,20 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           preCommands: |
-            wrangler pages project list
-            wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main || true
+            if ! wrangler pages project list | grep -q "${{ secrets.CLOUDFLARE_DOCS_NAME }}"; then
+              echo "Creating project"
+              wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main
+            else
+              echo "Project exist, continuing"
+            fi
 
             echo "${{ secrets.PUBLIC_POSTHOG_KEY }}" > PUBLIC_POSTHOG_KEY.txt
             wrangler pages secret put PUBLIC_POSTHOG_KEY --project-name ${{ secrets.CLOUDFLARE_PROJECT_NAME }} < PUBLIC_POSTHOG_KEY.txt
             rm PUBLIC_POSTHOG_KEY.txt
+          # preCommands: |
+          #   wrangler pages project list
+          #   wrangler pages project create ${{ secrets.CLOUDFLARE_DOCS_NAME }} --production-branch=main || true
+
+          # export PUBLIC_POSTHOG_KEY="${{ secrets.PUBLIC_POSTHOG_KEY }}"
           command: pages deploy apps/docs/dist --project-name=${{ secrets.CLOUDFLARE_DOCS_NAME }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
