@@ -37,7 +37,6 @@ export const observeAndTrackSections = (sections: string[]): void => {
  * document.addEventListener('DOMContentLoaded', () => trackPageView({ page_type: 'landing_page', version: 2 })
  */
 export const trackPageView = (customProperties: Record<string, any> = {}): void => {
-    console.log("ddd")
     const defaultProperties: Record<string, string> = {
         url: window.location.pathname,
         path: window.location.pathname,
@@ -48,4 +47,4 @@ export const trackPageView = (customProperties: Record<string, any> = {}): void 
     logAdapter('pageview', allProperties);
 }
 
-export const log = (eventName: string, options?: Record<string, string>) => logAdapter(eventName, options)
+export const log = (eventName: string, options?: Record<string, string | number>) => logAdapter(eventName, options)

@@ -13,6 +13,7 @@ import { Button, IconButton, Input } from "@ev-forge/components";
 import { CodeBlock } from "./CodeBlock";
 import { ICONS_PER_PAGE } from "../constants";
 import { filterItems, onGetItemsPerPage } from "../utils";
+import { log } from "../logUtilities/logs.utils";
 
 const TOTAL_ITEMS = metadata.length;
 const REST = TOTAL_ITEMS % ICONS_PER_PAGE;
@@ -45,7 +46,13 @@ export const Previewer = () => {
   };
 
   useEffect(() => {
-    setFilteredMetadata(filterItems(queryDebounce, metadata));
+    const searchResult = filterItems(queryDebounce, metadata);
+    setFilteredMetadata(searchResult);
+    if (queryDebounce)
+      log("perform-search2", {
+        query: queryDebounce,
+        results_count: searchResult.length,
+      });
   }, [queryDebounce, metadata]);
 
   return (

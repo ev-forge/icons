@@ -5,7 +5,7 @@ export const METADATA = {
   author: 'ev-forge',
   image: 'https://icons.jimynicanor.com/default.webp',
   url: 'https://icons.jimynicanor.com',
-  prefix: 'EVG_ICONS'
+  prefix: 'EVF_ICONS'
 }
 
 export const INSTALL_EXAMPLE = `npm i @ev-forge/icons`;

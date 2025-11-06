@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@ev-forge/components";
 import type { Metadata } from "@ev-forge/icons";
+import { log } from "./logUtilities/logs.utils";
 
 type BoxProps = {
   metadata: Metadata;
@@ -12,9 +13,14 @@ export const Box = ({ metadata, fnSelectIcon }: BoxProps) => {
   const [error, setError] = useState(false);
 
   const onCopy = async () => {
-    await navigator.clipboard.writeText(metadata.code);
-    setWasCopied(true);
-    setTimeout(() => setWasCopied(false), 3000);
+    try {
+      await navigator.clipboard.writeText(metadata.code);
+      setWasCopied(true);
+      setTimeout(() => setWasCopied(false), 3000);
+      log("browser_icons_copy", { code: metadata.code });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
