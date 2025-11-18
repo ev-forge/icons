@@ -4,11 +4,11 @@
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/@ev-forge/icons)](https://bundlephobia.com/package/@ev-forge/icons)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect, icon-level tree-shaking.
+**A lightweight icon library delivering Font Awesome's high-quality icons via a framework-agnostic Web Component, with perfect icon-level tree-shaking and extensible to the community.**
 
-<!-- ➡️ **Visit the main project repository:** [github.com/ev-forge/icons](https://github.com/ev-forge/icons) -->
-
----
+<p align="center">
+  <img src="../../apps//docs/public/default.webp" alt="ev-forge-icons hero image" width="400" />
+</p>
 
 ## ✨ Philosophy
 
